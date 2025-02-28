@@ -262,32 +262,72 @@
               </div>
             </td>
             <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> RAGEN: A General-Purpose Reasoning Agent Training Framework</papertitle>
+              <papertitle><span style="color:red;">[New]</span> RAGEN: Training Agents by Reinforcing Reasoning</papertitle>
               <br>
-              <strong>Zihan Wang</strong>,
-              <a href="https://jameskrw.github.io/">Kangrui Wang</a>,
-              <a href="https://qinengwang-aiden.github.io/">Qineng Wang</a>,
-              <a href="https://williamzhangsjtu.github.io/">Pingyue Zhang</a>,
-              <a href="https://limanling.github.io">Manling Li</a>
+              <strong>Zihan Wang*</strong>, 
+              <a href="https://jameskrw.github.io/" rel="nofollow">Kangrui Wang*</a>, 
+              <a href="https://qinengwang-aiden.github.io/" rel="nofollow">Qineng Wang*</a>, 
+              <a href="https://williamzhangsjtu.github.io/" rel="nofollow">Pingyue Zhang*</a>, 
+              <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en" rel="nofollow">Linjie Li*</a>, 
+              <a href="https://zyang-ur.github.io/" rel="nofollow">Zhengyuan Yang</a>, 
+              <a href="https://www.linkedin.com/in/kefan-yu-22723a25b/en/" rel="nofollow">Kefan Yu</a>, 
+              <a href="https://www.linkedin.com/in/menhguin/?originalSubdomain=sg" rel="nofollow">Minh Nhat Nguyen</a>, 
+              <a href="https://suif.stanford.edu/~lam/" rel="nofollow">Monica Lam</a>, 
+              <a href="https://http://2prime.github.io/" rel="nofollow">Yiping Lu</a>, 
+              <a href="https://kyunghyuncho.me/" rel="nofollow">Kyunghyun Cho</a>, 
+              <a href="https://jiajunwu.com/" rel="nofollow">Jiajun Wu</a>, 
+              <a href="https://profiles.stanford.edu/fei-fei-li" rel="nofollow">Li Fei-Fei</a>, 
+              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" rel="nofollow">Lijuan Wang</a>, 
+              <a href="https://homes.cs.washington.edu/~yejin/" rel="nofollow">Yejin Choi</a>, 
+              <a href="https://limanling.github.io/" rel="nofollow">Manling Li</a>
               <br>
-              <em>Github Repository</em>
+              <em>Github Repository</em> 
               <br>
-              <a href="http://github.com/ZihanWang314/ragen" style="vertical-align: middle;">[code]</a>
+              <a href="http://github.com/ZihanWang314/ragen" style="vertical-align: middle;">[Code]</a><a href="" style="vertical-align: middle;">[Paper coming soon]</a>
               <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ZihanWang314/ragen?style=social" style="vertical-align: middle;">
               <p>
-                The first complete reproduction framework for DeepSeek-R1 agent training, featuring:
-              </p>
-              <ul style="margin-top:-10px;">
-                <li>Step-wise rollout-update</li>
-                <li>Work well without SFT on 0.5B models</li>
-                <li>Unified multi-round processing with stable batch sizes</li>
-                <li>Potential world modeling capabilities</li>
-              </ul>
-              <p>
-                Combines environment states (s), rewards (r), and agent actions (a) in a unified training paradigm. Features batch-generated rollouts and regex-based reward parsing for efficient training.
+                We introduce <b>RAGEN</b> to train LLM reasoning agents via RL in multi-turn, stochastic environments. RAGEN is formulated with MDP and optimized through <b>Reasonig-Interaction Chain Optimization</b> (RICO). RAGEN-0.5B is trained across three agentic tasks, showing intriguing reasoning patterns.
               </p>
               </td>
           </tr>
+
+          <tr>
+            <td style="padding:20px;width:27%;vertical-align:middle">
+              <div class="one">
+                <img src='images/tstar.png' width="190">
+              </div>
+            </td>
+            <td style="padding:20px;width:67%;vertical-align:middle">
+              <papertitle><span style="color:red;">[New]</span> Re-thinking Temporal Search for Long-Form Video Understanding</papertitle>
+              <br>
+              <a href="https://jhuiye.com/">Jinhui Ye</a><strong>*</strong>,
+              <strong>Zihan Wang*</strong>,
+              <a href="https://haosensun.github.io/">Haosen Sun</a>,
+              <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>,
+              <a href="https://zanedurante.github.io/">Zane Durante</a>,
+              <a href="https://ceyzaguirre4.github.io/">Cristobal Eyzaguirre</a>,
+              <a href="https://talkingtorobots.com/yonatanbisk.html">Yonatan Bisk</a>,
+              <a href="https://www.niebles.net/">Juan Carlos Niebles</a>,
+              <a href="https://profiles.stanford.edu/ehsan-adeli">Ehsan Adeli</a>,
+              <a href="https://profiles.stanford.edu/fei-fei-li/">Li Fei-Fei</a>,
+              <a href="https://jiajunwu.com/">Jiajun Wu</a>,
+              <a href="https://limanling.github.io/">Manling Li</a>  
+              <br>
+              <em>CVPR 2024</em>
+              <br>
+              <!-- <a href="http://github.com/ZihanWang314/ragen" style="vertical-align: middle;">[Code]</a> -->
+              <!-- <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ZihanWang314/ragen?style=social" style="vertical-align: middle;"> -->
+              [<a href="https://longvideohaystack.github.io/">Project Page</a>] [<a href="https://huggingface.co/datasets/LVHaystack/LongVideoHaystack">Dataset</a>]
+              Paper & Code coming soon<br>
+              <p>
+                We introduce <b>LongVideoHaystack</b>, a 480-hour video temporal search dataset with 15,092 human-annotated instances, where SOTA scores <b>2.1%</b> Temporal F<sub>1</sub>. Our temporal search framework <b>T*</b> boosts GPT-4o from 50.5% to <b>53.1%</b> and LLaVA-OV from 56.5% to <b>62.4%</b> on LongVideoBench XL.
+              </p>
+
+
+
+              </td>
+          </tr>
+
             <tr>
               <td style="padding:20px;width:27%;vertical-align:middle">
                 <div class="one">
@@ -306,8 +346,8 @@
                 <br>
                 <em>EMNLP 2024</em>
                 <br>
-		<a href="https://arxiv.org/abs/2407.01906" style="vertical-align: middle;">[paper]</a>
-		<a href="https://github.com/deepseek-ai/ESFT" style="vertical-align: middle;">[code]</a>
+		<a href="https://arxiv.org/abs/2407.01906" style="vertical-align: middle;">[Paper]</a>
+		<a href="https://github.com/deepseek-ai/ESFT" style="vertical-align: middle;">[Code]</a>
 		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/deepseek-ai/ESFT?style=social" style="vertical-align: middle;">
                 <p>
                   We harness the <b> Specialized Power of Experts </b> in MoE LLMs through ESFT. By fine-tuning <b> Down to 5% Experts </b> in a layer, near-full performance can be achieved. 
@@ -336,9 +376,9 @@
               <br>
               <em>ICLR 2024</em>
               <br>
-		<a href="https://arxiv.org/abs/2309.10691" style="vertical-align: middle;">[paper]</a>
-		<a href="https://xingyaoww.github.io/mint-bench" style="vertical-align: middle;">[website]</a>
-		<a href="https://github.com/xingyaoww/mint-bench" style="vertical-align: middle;">[code]</a>
+		<a href="https://arxiv.org/abs/2309.10691" style="vertical-align: middle;">[Paper]</a>
+		<a href="https://xingyaoww.github.io/mint-bench" style="vertical-align: middle;">[Project Page]</a>
+		<a href="https://github.com/xingyaoww/mint-bench" style="vertical-align: middle;">[Code]</a>
 		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/xingyaoww/mint-bench?style=social" style="vertical-align: middle;">
               <p>
 		We introduce <b>MINT</b>, a benchmark for evaluating LLMs in <b>Multi-turn Interactions</b> with tools and language feedback. 
@@ -359,8 +399,8 @@
                 <br>
 		<a href="https://chat.deepseek.com"> DeepSeek AI</a> (157 authors including <strong> Zihan Wang</strong>)
                 <br>
-		<a href="https://arxiv.org/abs/2405.04434" style="vertical-align: middle;">[paper]</a>
-		<a href="https://github.com/deepseek-ai/DeepSeek-V2?tab=readme-ov-file" style="vertical-align: middle;">[code]</a>
+		<a href="https://arxiv.org/abs/2405.04434" style="vertical-align: middle;">[Paper]</a>
+		<a href="https://github.com/deepseek-ai/DeepSeek-V2?tab=readme-ov-file" style="vertical-align: middle;">[Code]</a>
 		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/deepseek-ai/DeepSeek-V2?style=social" style="vertical-align: middle;">
                 <p>
 		DeepSeek-V2 is a strong MoE model with 23B activated parameters. It achieves stronger 
@@ -386,8 +426,8 @@
               <br>
               <em>CIKM 2023, <b>Oral Presentation</b></em>
               <br>
-		<a href="pdf/cikm23.pdf" style="vertical-align: middle;">[paper]</a>
-		<a href="https://github.com/ZihanWang314/NOVO" style="vertical-align: middle;">[code]</a>
+		<a href="pdf/cikm23.pdf" style="vertical-align: middle;">[Paper]</a>
+		<a href="https://github.com/ZihanWang314/NOVO" style="vertical-align: middle;">[Code]</a>
 		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/zihanwang314/NOVO?style=social" style="vertical-align: middle;">
               <p> 
                 We propose learnable NOVO document-IDs for model-based IR. 
@@ -415,8 +455,8 @@
               <a href="http://playbigdata.ruc.edu.cn/dou">Zhicheng Dou</a>,
               <a href="https://scholar.google.com/citations?hl=en&user=tbxCHJgAAAAJ">Ji-Rong Wen</a>
               <br>
-		<a href="https://arxiv.org/abs/2306.05212" style="vertical-align: middle;">[paper]</a>
-		<a href="https://github.com/ruc-gsai/yulan-ir" style="vertical-align: middle;">[code]</a>
+		<a href="https://arxiv.org/abs/2306.05212" style="vertical-align: middle;">[Paper]</a>
+		<a href="https://github.com/ruc-gsai/yulan-ir" style="vertical-align: middle;">[Code]</a>
 		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ruc-gsai/yulan-ir?style=social" style="vertical-align: middle;">
 		
               <p> 
