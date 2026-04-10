@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en" data-theme="light">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y9L74WH97"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1Y9L74WH97');
+  </script>
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Blog · Zihan Wang</title>
+  <meta name="author" content="Zihan Wang">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .blog-list { list-style: none; padding: 0; }
+    .blog-post {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-post:last-child { border-bottom: none; }
+    .blog-post-date {
+      font-size: 12px;
+      color: var(--text-faint);
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .blog-post-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+    .blog-post-title a { color: inherit; }
+    .blog-post-title a:hover { color: var(--purple); text-decoration: none; }
+    .blog-post-excerpt {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .blog-empty {
+      text-align: center;
+      padding: 80px 0;
+      color: var(--text-faint);
+      font-size: 14px;
+    }
+    .blog-intro {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    main.blog-main { padding-top: 48px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="index.html">Zihan Wang</a>
+    <ul id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="index.html#talks">Talks</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon moon"></i>
+        <i class="fa-solid fa-sun sun"></i>
+      </button>
+      <button id="hamburger" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<main class="blog-main">
+  <section>
+    <h2>Blog</h2>
+    <p class="blog-intro">
+      Long-form notes on research, engineering, and things I find interesting.
+      Shorter thoughts live on <a href="https://twitter.com/wzenus">X</a> and <a href="https://www.zhihu.com/people/platinum-47-88">Zhihu</a>.
+    </p>
+
+    <ul class="blog-list">
+      <li class="blog-post">
+        <div class="blog-post-date">Coming soon</div>
+        <div class="blog-post-title">RAGEN Roadmap — Where Agentic RL is Headed</div>
+        <div class="blog-post-excerpt">A long-form walkthrough of what we learned building RAGEN v1 and v2, open problems in multi-turn agent RL, and the roadmap for the next year.</div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Zihan Wang &nbsp;&middot;&nbsp; Last updated April 2026</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+</body>
+</html>

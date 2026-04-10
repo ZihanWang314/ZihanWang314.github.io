@@ -1,924 +1,653 @@
 <!DOCTYPE HTML>
-<html lang="en"><head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y9L74WH97"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-  
-      gtag('config', 'G-1Y9L74WH97');
-    </script>
-  
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y9L74WH97"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1Y9L74WH97');
+  </script>
 
+  <!-- Theme init (before body paint to avoid flash) -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Zihan Wang's Homepage 王子涵</title>
-  
   <meta name="author" content="Zihan Wang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-	<style>
-	  /* Style for the floating window */
-	  #floatWindow {
-	      display: none; /* Hidden by default */
-	      position: absolute;
-	      background-color: #f9f9f9;
-	      border: 1px solid #ccc;
-	      padding: 15px;
-	      width: 300px;
-	      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-	      z-index: 100;
-	      top: 100px;
-	      left: 100px;
-	  }
-	
-	  /* Close button style */
-	  #closeBtn {
-	      display: inline-block;
-	      float: right;
-	      cursor: pointer;
-	      color: #aaa;
-	  }
-	
-	  #closeBtn:hover {
-	      color: #000;
-	  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
 
-  td, th {
-    padding: 8px;
-  }
-	</style>
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-  /* 当屏幕宽度小于1200px时，调整字体大小 */
-  @media (max-width: 1200px) {
-    #responsiveTable td,
-    #responsiveTable td * {
-      font-size: 14px;
-    }
-      /* 调整图片大小 */
-    #resizeImg {
-      height: 16px; /* 图片高度等于字体大小 */
-      width: auto; /* 按比例调整宽度 */
-      vertical-align: middle; /* 保持图片与文字对齐 */
-    }
-  }
-
-  /* 当屏幕宽度小于800px时，进一步调整字体大小 */
-  @media (max-width: 800px) {
-    #responsiveTable td,
-    #responsiveTable td * {
-      font-size: 12px;
-    }
-    #resizeImg {
-      height: 14px; /* 图片高度等于字体大小 */
-      width: auto; /* 按比例调整宽度 */
-      vertical-align: middle; /* 保持图片与文字对齐 */
-    }
-  }
-
-  /* 当屏幕宽度小于500px时，字体更小 */
-  @media (max-width: 500px) {
-    #responsiveTable td,
-    #responsiveTable td * {
-      font-size: 10px;
-    }
-    #resizeImg {
-      height: 12px; /* 图片高度等于字体大小 */
-      width: auto; /* 按比例调整宽度 */
-      vertical-align: middle; /* 保持图片与文字对齐 */
-    }
-  }
-</style>
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Zihan "Zenus" Wang</name>
-              </p>
-              <p>
-                I work on Agentic RL at 
-                <a href="https://www.northwestern.edu/">Northwestern</a>,
-                advised by the wonderful
-                <a href="https://limanling.github.io">Manling Li</a>.
-                I'm an incoming student researcher at 
-                <a href="https://www.nvidia.com/">NVIDIA</a>, and I previously interned at 
-                <a href="https://www.microsoft.com/">Microsoft</a>, 
-                <a href="https://www.yutori.com/">Yutori</a>, and 
-                <a href="https://www.deepseek.com/">DeepSeek</a>.
-                My Chinese name is 王子涵. 
-                <!--
-		I got my bachelor's degree with the Baosteel Award at 
-                <a href="http://ai.ruc.edu.cn/english/">Gaoling School of AI, RUC</a>.
-		I was fortunate to work with  
-		<a href="http://blender.cs.illinois.edu">Heng Ji</a>
-		at UIUC and collaborate with fantastic teams at
-                <a href="https://www.deepseek.com/">DeepSeek</a>. -->
-              </p>
-              <p style="text-align:center">
-                <!-- <a style="color:red" href="https://www.overleaf.com/read/dgwkwnknkprx#1bbeb2">Research Statement</a> -->
-                <!-- &nbsp<br>&nbsp -->
-                <a href="mailto:zihanwang.ai@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://github.com/zihanwang314">Github</a> &nbsp/&nbsp
-                <a href="https://www.semanticscholar.org/author/Zihan-Wang/2243360876">Semantic Scholar</a> &nbsp/&nbsp
-                <a href="https://www.zhihu.com/people/platinum-47-88">Zhihu</a>  &nbsp/&nbsp
-                <a href="pdf/ZihanWang_CV.pdf">CV</a> 
-                <br>
-                <a href="https://twitter.com/wzenus?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a class="nav-brand" href="#">Zihan Wang</a>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon moon"></i>
+        <i class="fa-solid fa-sun sun"></i>
+      </button>
+      <button id="hamburger" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
 
-<!-- 		, <a href="https://www.overleaf.com/read/mxyjqgqvvrty#c2adfb">overleaf(up-to-date)</a>]  &nbsp/&nbsp -->
-		<br>
-<!-- 		<a href="https://twitter.com/wzihanw?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @wzihanw</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/photo.jpeg"><img
-                      style="width:80%;max-width:80%" alt="profile photo" src="images/1011_profile.JPG" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
+<main>
 
+  <!-- ── Hero / About ── -->
+  <section id="about">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="profile-row">
+          <img class="profile-photo" src="images/profile.png" alt="Zihan Wang profile photo">
+          <div>
+            <div class="bio-name">Zihan "Zenus" Wang<span class="cn">王子涵</span></div>
+            <div class="bio-role">Researcher · Northwestern University</div>
+          </div>
+        </div>
 
+        <div class="bio-text">
+          <p>
+            I am a Researcher at
+            <a href="https://www.northwestern.edu/">Northwestern University</a>
+            working on Agentic RL, advised by
+            <a href="https://limanling.github.io">Manling Li</a>.
+            I am an incoming student researcher at
+            <a href="https://www.nvidia.com/">NVIDIA</a>, and previously interned at
+            <a href="https://www.microsoft.com/">Microsoft</a>,
+            <a href="https://www.yutori.com/">Yutori</a>, and
+            <a href="https://www.deepseek.com/">DeepSeek</a>.
+          </p>
+        </div>
 
+        <div class="bio-recruit">
+          <strong>Northwestern-MLL-Lab is seeking research collaborators/interns!</strong>
+          More details <a href="https://hackmd.io/@zAmnkcJDS5CHhVb-PzcMPA/S15pslRn0">here</a>.
+          Feel free to drop an <a href="mailto:zihanwang.ai@gmail.com">email</a>.
+        </div>
 
+        <div class="research-tags">
+          <button class="research-tag" data-research="agents" type="button">Agentic RL</button>
+          <button class="research-tag" data-research="moe" type="button">MoE</button>
+          <button class="research-tag" data-research="long-context" type="button">Long-Context</button>
+          <button class="research-tag" data-research="multimodal" type="button">Multimodal</button>
+        </div>
+        <div id="tag-popover" class="tag-popover" hidden></div>
 
+        <div class="bio-icons">
+          <a href="mailto:zihanwang.ai@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/zihanwang314" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/zenus" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=Sz2BfA8AAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <a href="https://www.semanticscholar.org/author/Zihan-Wang/2243360876" title="Semantic Scholar" aria-label="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
+          <a href="https://twitter.com/wzenus" title="Twitter / X" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.zhihu.com/people/platinum-47-88" title="Zhihu" aria-label="Zhihu"><i class="fa-brands fa-zhihu"></i></a>
+          <a href="pdf/ZihanWang_CV.pdf" title="CV" aria-label="CV"><i class="fa-solid fa-file-lines"></i></a>
+        </div>
+      </div>
 
+      <div class="hero-right">
+        <div class="hero-news">
+          <div class="hero-news-title">Updates</div>
 
+          <a class="hero-news-item" href="https://ragen-ai.github.io/v2/" target="_blank" rel="noopener">
+            <div class="hero-news-date">Feb 2026</div>
+            <div class="hero-news-headline">RAGEN-2: Reasoning Collapse in Agentic RL</div>
+            <div class="hero-news-desc">New preprint · SNR-Aware Filtering fixes template collapse in multi-turn RL</div>
+          </a>
 
+          <a class="hero-news-item" href="https://www.youtube.com/watch?v=wak7R0luB90" target="_blank" rel="noopener">
+            <div class="hero-news-date">Mar 2026</div>
+            <div class="hero-news-headline">Joined the David Ondrej Podcast</div>
+            <div class="hero-news-desc">On multi-turn agent RL collapse, DeepSeek's research culture, and agent bottlenecks</div>
+          </a>
 
-        
-        <heading>News</heading>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-	      <td style="padding:20px;width:75%;vertical-align:middle">
-	        <ul>
-	          <!-- <li>
-	            <b>🗓️ Oct 29, 2024</b> - 
-			Releasing <a href="http://www.github.com/zihanwang314/dump-to-gpt"> dump-to-GPT</a>:
-			let GPT quickly read your entire codebase with one line of code! 
-			A small but exciting start of <a href="http://www.github.com/zihanwang314/AI-wrench"> AI-wrench</a>,
-			a growing toolkit for efficient AI engineering.
-		  </li> -->
-	            <li>
-	              <b>🗓️ Long-term </b> - <span style="color: red;">
-	                <b>Northwestern-MLL-Lab</b> is seeking research collaborators/interns! More details <a href="https://hackmd.io/@zAmnkcJDS5CHhVb-PzcMPA/S15pslRn0">here</a>. If you’d like to work with me, plz drop an <a href="mailto:zihanwang.ai@gmail.com">email</a>. You may feel free to lead/join projects; we prefer strong coding, rapid learning skills, interdisciplinary expertise (STEM/other). Research experience is welcome, but not a requirement! 
-	              </span>
-	            </li>
+          <a class="hero-news-item" href="https://mind-cube.github.io" target="_blank" rel="noopener">
+            <div class="hero-news-date">Dec 2025</div>
+            <div class="hero-news-headline">Outstanding Paper @ NeurIPS 2025 LAW</div>
+            <div class="hero-news-desc">MindCube recognized at NeurIPS LAW · Best Paper @ ICCV 2025 SP4V</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-              
-              <li>
-                <b>🗓️ Mar 4, 2026</b> – Excited to join the David Ondrej Podcast! We talked about why multi-turn agent RL collapses—and what we can do about it besides looking at entropy. Also discussed DeepSeek's infra and research culture, AI labs comparison, and the bottlenecks of agents today. 
-                <a href="https://www.youtube.com/watch?v=wak7R0luB90">[Watch here]</a>.
-              </li>
-              <li>
-                <b>🗓️ May 22, 2025</b> – Thrilled to join the <i>Manifold Podcast</i> with Steve Hsu!  
-                We dived into robotics, small models, RL, and lessons from DeepSeek. Also shared my recent work on RAGEN and Chain-of-Experts.   
-                <a href="https://www.manifold1.com/episodes/robots-small-models-and-rl-with-deepseek-alumnus-zihan-wang-86">[Listen here]</a>.
-              </li>
-              <li>
-                <b>🗓️ Apr 25, 2025</b> - Excited to give a talk about <a href="https://ragen-ai.github.io/">RAGEN</a> at UIUC NLP Reading Group! <a href="pdf/RAGEN_presentation.pdf">[Slides]</a>
-              </li>
-<!--               <li>
-                    <b>🗓️ Feb 20, 2025</b> - I'm recently hosting office hours <a href="https://calendar.app.google/Y6hFimP6bJC8kVmo6">[Calendar link]</a>. 
-              So far I've helped 30+ junior researchers from diverse backgrounds (slots refresh every Tuesday w/ Google Calendar). Feel free to book a time and maybe I'd have the chance to help you.
-          </b>
-            </li> -->
-	            <li>
-	              <b>🗓️ Jan 27, 2025</b> - <a href="https://github.com/ZihanWang314/ragen">Introducing RAGEN -- the world’s first reproduction of DeepSeek-R1(-Zero) methods for training agentic AI models! </a>
-	            </li>
-	            <li>
-	            <b>🗓️ Sep 20, 2024</b> - Glad to announce that
-	            <a href="https://arxiv.org/abs/2407.01906">ESFT</a>
-	            has been accepted to the EMNLP 2024 Main Conference! 🎉 Many thanks to all collaborators!
-	          </li>
-	          <li>
-	            <b>🗓️ Jul 4, 2024</b> - 
-			Thrilled to introduce our latest project at DeepSeek,
-	            <a href="https://arxiv.org/abs/2407.01906">Expert-Specialized Fine-Tuning (ESFT)</a>
-		    for efficient and effective LLM customization by leveraging the highly specialized Mixture-of-Experts (MoE)
-		    architecture! 🤖✨
-	          </li>
-	          <li>
-	            <b>🗓️ Jun 2, 2024</b> - Grateful to be spotlighted by my alma mater RUC for my journey and achievements. (<a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU4MzU3OA==&mid=2652442865&idx=1&sn=5ac4b8798062e581cee358e89958bc76">read blog</a>)
-	          </li>			
-	          <li><b>🗓️ Feb 15, 2024</b> - Excited to join Northwestern as a PhD student! 🎓 Many thanks to my advisor <a href="https://limanling.github.io">Manling Li</a>!
-	          </li>
-	          <li><b>🗓️ Oct 19, 2023</b> - Honored to be awarded the 
-	            <a href="https://mp.weixin.qq.com/s/Nb6RIBYcZQp_K66wvEr34A">Baosteel Outstanding Student Award 2023</a> 🏅 as the <b>ONLY</b> undergrad student among science and technology departments in RUC! Special thanks to 
-	            <a href="http://playbigdata.ruc.edu.cn/dou">NLPIR lab</a>! 🙏
-	          </li>
-	          <li><b>🗓️ Jun 7, 2023</b> - Excited to share that I'll be joining 
-	            <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> 🔬 this summer as a student researcher!
-	          </li>
-	          <!-- <li><b>🗓️ Mar 15, 2023</b> - My talk on <font size="3">LARGE</font> language models at 
-	            <a href="https://cosx.org/">Capital of Statistics</a> 📊 will take place at 7:00 PM Mar 17, 2023 BJT! Click
-	            <a href="https://mp.weixin.qq.com/s/9G8wct4ktTHqQw7FFFhbQg">here</a> for more details. (Update: <a href="./data/LLMs.pptx" download>slides</a>, <a href="https://www.bilibili.com/video/BV1EL411C79J">video</a>)
-	          </li>
-	          <li><b>🗓️ Jan 12, 2023</b> - I will give a talk on pre-trained models and their applications 📚 at 2:00 PM Jan 13, 2023 BJT at 
-	            <a href="http://mlc.ruc.edu.cn/">Mingli College</a>! For more information, click
-	            <a href="https://mp.weixin.qq.com/s/ecaswp2h04tCgL7O4B5RGQ">here</a>.
-	            (Update: <a href="./data/pretraining.pptx" download>slides</a>)
-	          </li> -->
-	          <li><b>🗓️ Dec 12, 2022</b> - I posted an article introducing ChatGPT on 
-	            <a href="https://cosx.org/">Capital of Statistics</a> 💡. Do not miss it if you want to know more about ChatGPT! (<a href="https://mp.weixin.qq.com/s/JiWpTORpjqzOgC8IsslKVA">link</a>)
-	          </li>
-	        </ul>
-	      </td>
-	    </tr>
-	  </tbody>
-	</table>
-	      
-        <heading>Research Interest</heading>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-                <p>The growth of foundation models, while extremely rapid, has heightened the need to address the challenges arising from their expanding scale.
-                  My research focuses on foundation models' 
-			<b>autonomy</b> 
-			(<a href="https://github.com/zihanwang314/ragen">RAGEN</a>, <a href="https://openreview.net/forum?id=jp3gWrMuIZ">MINT benchmark</a>), 
-			<b>efficiency</b> 
-			(<a href="https://arxiv.org/abs/2405.04434">DeepSeek-V2</a>, <a href="https://arxiv.org/abs/2407.01906">Expert-Specialized Tuning</a>, <a href="https://github.com/zihanwang314/coe">Chain-of-Experts</a>), 
-			and <b>long-context understanding</b> 
-			(<a href="https://longvideohaystack.github.io/">Long Video Haystack&T*</a>, <a href="https://arxiv.org/abs/2306.05212">RETA-LLM</a>).
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+  <!-- ── News ── -->
+  <section id="news">
+    <h2>News</h2>
+    <ul>
+      <li class="news-item">
+        <b>Mar 4, 2026</b> — Joined the David Ondrej Podcast! We talked about why multi-turn agent RL collapses—and what we can do about it. Also discussed DeepSeek's infra and research culture, AI labs comparison, and agent bottlenecks.
+        <a href="https://www.youtube.com/watch?v=wak7R0luB90">[Watch]</a>
+      </li>
+      <li class="news-item">
+        <b>May 22, 2025</b> — Joined the <i>Manifold Podcast</i> with Steve Hsu! Dived into robotics, small models, RL, and lessons from DeepSeek. Also shared my work on RAGEN and Chain-of-Experts.
+        <a href="https://www.manifold1.com/episodes/robots-small-models-and-rl-with-deepseek-alumnus-zihan-wang-86">[Listen]</a>
+      </li>
+      <li class="news-item">
+        <b>Apr 25, 2025</b> — Gave a talk about <a href="https://ragen-ai.github.io/">RAGEN</a> at UIUC NLP Reading Group!
+        <a href="pdf/RAGEN_presentation.pdf">[Slides]</a>
+      </li>
+      <li class="news-item">
+        <b>Jan 27, 2025</b> — <a href="https://github.com/ZihanWang314/ragen">Introducing RAGEN</a> — the world's first reproduction of DeepSeek-R1(-Zero) methods for training agentic AI models!
+      </li>
+      <li class="news-item">
+        <b>Sep 20, 2024</b> — <a href="https://arxiv.org/abs/2407.01906">ESFT</a> has been accepted to the EMNLP 2024 Main Conference!
+      </li>
+      <li class="news-item">
+        <b>Jul 4, 2024</b> — Introducing
+        <a href="https://arxiv.org/abs/2407.01906">Expert-Specialized Fine-Tuning (ESFT)</a>
+        for efficient and effective LLM customization leveraging Mixture-of-Experts architecture.
+      </li>
+      <li class="news-item">
+        <b>Jun 2, 2024</b> — Grateful to be spotlighted by my alma mater RUC for my journey and achievements.
+        <a href="https://mp.weixin.qq.com/s?__biz=MzA3ODU4MzU3OA==&mid=2652442865&idx=1&sn=5ac4b8798062e581cee358e89958bc76">[Read blog]</a>
+      </li>
+      <li class="news-item">
+        <b>Feb 15, 2024</b> — Excited to join Northwestern as a researcher! Many thanks to my advisor <a href="https://limanling.github.io">Manling Li</a>!
+      </li>
+      <li class="news-item hidden">
+        <b>Oct 19, 2023</b> — Honored to be awarded the
+        <a href="https://mp.weixin.qq.com/s/Nb6RIBYcZQp_K66wvEr34A">Baosteel Outstanding Student Award 2023</a>
+        as the <b>only</b> undergrad student among science and technology departments in RUC!
+      </li>
+      <li class="news-item hidden">
+        <b>Jun 7, 2023</b> — Excited to join <a href="https://blender.cs.illinois.edu/">UIUC Blender Lab</a> this summer as a student researcher!
+      </li>
+      <li class="news-item hidden">
+        <b>Dec 12, 2022</b> — Posted an article introducing ChatGPT on
+        <a href="https://cosx.org/">Capital of Statistics</a>.
+        <a href="https://mp.weixin.qq.com/s/JiWpTORpjqzOgC8IsslKVA">[Link]</a>
+      </li>
+    </ul>
+    <button id="news-toggle">Show More</button>
+  </section>
 
-        
+  <!-- ── Publications ── -->
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <p class="pub-caption">
+      Full list on
+      <a href="https://scholar.google.com/citations?user=Sz2BfA8AAAAJ&hl=en">Google Scholar</a> /
+      <a href="https://www.semanticscholar.org/author/Zihan-Wang/2243360876">Semantic Scholar</a>
+    </p>
 
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="agents">Agents</button>
+      <button class="filter-btn" data-filter="efficiency">Efficiency</button>
+      <button class="filter-btn" data-filter="multimodal">Multimodal</button>
+    </div>
 
+    <div class="pub-list">
 
+      <!-- RAGEN-2 -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/ragen-v2.png" alt="RAGEN-2"></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>RAGEN-2: Reasoning Collapse in Agentic RL</div>
+          <div class="pub-authors">
+            <strong>Zihan Wang*</strong>, Chi Gui*, Xing Jin*,
+            Qineng Wang*, Licheng Liu*, Kangrui Wang, Shiqi Chen,
+            Linjie Li, Zhengyuan Yang, Pingyue Zhang, Yiping Lu,
+            Jiajun Wu, Li Fei-Fei, Lijuan Wang, Yejin Choi, Manling Li
+          </div>
+          <div class="pub-venue">Preprint</div>
+          <div class="pub-links">
+            <a href="https://ragen-ai.github.io/v2/">Homepage</a>
+            <a href="https://arxiv.org/abs/2604.06268">Paper</a>
+            <a href="https://x.com/wzenus/status/2032223055620014242?s=20">X Post</a>
+            <a href="https://github.com/mll-lab-nu/RAGEN">Code</a>
+          </div>
+          <div class="pub-desc">We discover <b>template collapse</b> in multi-turn agent RL — where models learn input-agnostic reasoning patterns that fool entropy metrics. We propose <b>SNR-Aware Filtering</b> to fix it.</div>
+        </div>
+      </div>
 
+      <!-- VAGEN -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><video src="/videos/vagen.mp4" poster="/images/vagen.png" muted loop autoplay playsinline preload="metadata"></video></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents</div>
+          <div class="pub-authors">
+            Kangrui Wang*, Pingyue Zhang*, <strong>Zihan Wang*</strong>, Yaning Gao*, Linjie Li*,
+            Qineng Wang, Hanyang Chen, Chi Wan, Yiping Lu, Zhengyuan Yang,
+            Lijuan Wang, Ranjay Krishna, Jiajun Wu, Li Fei-Fei, Yejin Choi, Manling Li
+          </div>
+          <div class="pub-venue">NeurIPS 2025</div>
+          <div class="pub-links">
+            <a href="https://vagen-ai.github.io/">Project Page</a>
+            <a href="https://vagen-ai.github.io/vagen_paper.pdf">Paper</a>
+            <a href="https://vagen.readthedocs.io/en/latest">Docs</a>
+            <a href="https://github.com/RAGEN-AI/VAGEN">Code</a>
+            <a href="https://mll-lab.notion.site/vagen">Blog</a>
+          </div>
+          <div class="pub-desc">VAGEN trains vision-language agents with explicit world-model reasoning and bi-level reinforcement learning, stabilizing credit assignment in sparse multi-turn environments.</div>
+        </div>
+      </div>
 
-	<heading>Selected Publications</heading>
-	<p>See full list on <a href="https://scholar.google.com/citations?user=Sz2BfA8AAAAJ&hl=en">Google Scholar</a> or <a href="https://www.semanticscholar.org/author/Zihan-Wang/2243360876" target="_blank">Semantic Scholar</a> (<a href="#" id="openFloat">Why I Love Semantic Scholar, and You Might Too</a>)</p> 
-	<!-- The floating window -->
-	<div id="floatWindow">
-	    <span id="closeBtn">&times;</span>
-	    <p>
-        Semantic Scholar uses <b>AI-powered</b> tools to summarize papers, highlight key phrases, and rank research by influence.
-        This helps you <b>find important studies faster</b>. 
-        Its <b> Semantic Reader </b> helps you understand papers with <b> skimming highlights </b> and <b> citation cards </b>.
-        You can also see how papers connect with citation graphs. 
-        While Google Scholar is great for broad searches, 
-        Semantic Scholar is smarter for finding high-quality and impactful research!
-	    </p>
-	</div>
-	      
+      <!-- MindCube -->
+      <div class="pub-card" data-tag="multimodal">
+        <div class="pub-thumb"><img src="images/mindcube.png" alt="MindCube"></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>Spatial Mental Modeling from Limited Views (MindCube)</div>
+          <div class="pub-authors">
+            Baiqiao Yin*, Qineng Wang*, Pingyue Zhang, Jianshu Zhang, Kangrui Wang,
+            <strong>Zihan Wang</strong>, Jieyu Zhang, Keshigeyan Chandrasegaran,
+            Han Liu, Ranjay Krishna, Saining Xie, Jiajun Wu†, Li Fei-Fei†, Manling Li†
+          </div>
+          <div class="pub-venue"><span style="color:red;">Outstanding Paper @ NeurIPS 2025 LAW · Best Paper @ ICCV 2025 SP4V</span></div>
+          <div class="pub-links">
+            <a href="https://mind-cube.github.io">Project Page</a>
+            <a href="https://arxiv.org/abs/2506.21458">Paper</a>
+            <a href="https://github.com/mll-lab-nu/MindCube">Code</a>
+            <a href="https://huggingface.co/datasets/MLL-Lab/MindCube">Dataset</a>
+          </div>
+          <div class="pub-desc">MindCube curates 21K spatial reasoning questions over 3K scenes. Guiding VLMs to map-then-reason boosts accuracy from 37.8% to 70.7%.</div>
+        </div>
+      </div>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+      <!-- UFO / Unary Feedback -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/unary_feedback.png" alt="Unary Feedback"></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>A Simple "Try Again" Can Elicit Multi-Turn LLM Reasoning</div>
+          <div class="pub-authors">
+            Licheng Liu*, <strong>Zihan Wang*</strong>, Linjie Li, Chenwei Xu, Yiping Lu, Han Liu, Avirup Sil, Manling Li
+          </div>
+          <div class="pub-venue">Preprint 2025</div>
+          <div class="pub-links">
+            <a href="https://unary-feedback.github.io/">Project Page</a>
+            <a href="https://arxiv.org/abs/2507.14295">Paper</a>
+            <a href="https://github.com/lichengliu03/unary-feedback">Code</a>
+          </div>
+          <div class="pub-desc">Unary Feedback as Observation (UFO): minimal prompts like "try again" keep single-turn quality while improving multi-turn accuracy by up to 14%.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/ragen-v2.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> RAGEN-2: Reasoning Collapse in Agentic RL</papertitle>
-              <br>
-              <strong>Zihan Wang*</strong>,
-              <a href="" rel="nofollow">Chi Gui*</a>,
-              <a href="" rel="nofollow">Xing Jin*</a>,
-              <a href="https://qinengwang-aiden.github.io/" rel="nofollow">Qineng Wang*</a>,
-              <a href="https://github.com/lichengliu03" rel="nofollow">Licheng Liu*</a>,
-              <a href="https://jameskrw.github.io/" rel="nofollow">Kangrui Wang</a>,
-              <a href="" rel="nofollow">Shiqi Chen</a>,
-              <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en" rel="nofollow">Linjie Li</a>,
-              <a href="https://zyang-ur.github.io/" rel="nofollow">Zhengyuan Yang</a>,
-              <a href="https://williamzhangsjtu.github.io/" rel="nofollow">Pingyue Zhang</a>,
-              <a href="https://2prime.github.io/" rel="nofollow">Yiping Lu</a>,
-              <a href="https://jiajunwu.com/" rel="nofollow">Jiajun Wu</a>,
-              <a href="https://profiles.stanford.edu/fei-fei-li" rel="nofollow">Li Fei-Fei</a>,
-              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" rel="nofollow">Lijuan Wang</a>,
-              <a href="https://homes.cs.washington.edu/~yejin/" rel="nofollow">Yejin Choi</a>,
-              <a href="https://limanling.github.io/" rel="nofollow">Manling Li</a>
-              <br>
-              <em>Preprint</em>
-              <br>
-              <a href="https://ragen-ai.github.io/v2/" style="vertical-align: middle;">[Homepage]</a>
-              <a href="https://arxiv.org/abs/2604.06268" style="vertical-align: middle;">[Paper]</a>
-              <a href="https://x.com/wzenus/status/2032223055620014242?s=20" style="vertical-align: middle;">[X Post]</a>
-              <a href="https://github.com/mll-lab-nu/RAGEN" style="vertical-align: middle;">[Code]</a>
-              <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/mll-lab-nu/RAGEN?style=social" style="vertical-align: middle;">
-              <p>
-                We discover <b>template collapse</b> in multi-turn agent RL — where models learn input-agnostic reasoning patterns that fool entropy metrics. We propose <b>SNR-Aware Filtering</b> to fix it, improving performance across planning, math, web navigation, and code execution.
-              </p>
-              <br>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <video src="/videos/vagen.mp4" poster="/images/vagen.png" muted="" loop="" autoplay="" playsinline="" preload="metadata" aria-hidden="true" width="190"></video>
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents</papertitle>
-              <br>
-              <a href="https://jameskrw.github.io/" rel="nofollow">Kangrui Wang*</a>,
-              <a href="https://williamzhangsjtu.github.io/" rel="nofollow">Pingyue Zhang*</a>,
-              <strong>Zihan Wang*</strong>,
-              <a href="" rel="nofollow">Yaning Gao*</a>,
-              <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en" rel="nofollow">Linjie Li*</a>,
-              <a href="https://qinengwang-aiden.github.io/" rel="nofollow">Qineng Wang</a>,
-              <a href="" rel="nofollow">Hanyang Chen</a>,
-              <a href="" rel="nofollow">Chi Wan</a>,
-              <a href="https://2prime.github.io/" rel="nofollow">Yiping Lu</a>,
-              <a href="https://zyang-ur.github.io/" rel="nofollow">Zhengyuan Yang</a>,
-              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" rel="nofollow">Lijuan Wang</a>,
-              <a href="https://ranjaykrishna.com/" rel="nofollow">Ranjay Krishna</a>,
-              <a href="https://jiajunwu.com/" rel="nofollow">Jiajun Wu</a>,
-              <a href="https://profiles.stanford.edu/fei-fei-li" rel="nofollow">Li Fei-Fei</a>,
-              <a href="https://homes.cs.washington.edu/~yejin/" rel="nofollow">Yejin Choi</a>,
-              <a href="https://limanling.github.io/" rel="nofollow">Manling Li</a>
-              <br>
-              <em>NeurIPS 2025</em>
-              <br>
-              <a href="https://vagen-ai.github.io/" style="vertical-align: middle;">[Project Page]</a>
-              <a href="https://vagen-ai.github.io/vagen_paper.pdf" style="vertical-align: middle;">[Paper]</a>
-              <a href="https://vagen.readthedocs.io/en/latest" style="vertical-align: middle;">[Docs]</a>
-              <a href="https://github.com/RAGEN-AI/VAGEN" style="vertical-align: middle;">[Code]</a>
-              <a href="https://mll-lab.notion.site/vagen" style="vertical-align: middle;">[Blog]</a>
-              <a href="https://x.com/ManlingLi_/status/1979229245919629391" style="vertical-align: middle;">[X Post]</a>
-              <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/RAGEN-AI/VAGEN?style=social" style="vertical-align: middle;">
-              <p>
-                VAGEN trains vision-language agents with explicit world-model reasoning and bi-level reinforcement learning, stabilizing credit assignment in sparse multi-turn environments while improving success on control, navigation, and manipulation benchmarks.
-              </p>
-              <br>
-            </td>
-          </tr>
+      <!-- RAGEN -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/ragen.png" alt="RAGEN"></div>
+        <div class="pub-body">
+          <div class="pub-title">RAGEN: Training Agents by Reinforcing Reasoning</div>
+          <div class="pub-authors">
+            <strong>Zihan Wang*</strong>, Kangrui Wang*, Qineng Wang*, Pingyue Zhang*, Linjie Li*,
+            Zhengyuan Yang, Xing Jin, Kefan Yu, Minh Nhat Nguyen, Licheng Liu,
+            Eli Gottlieb, Yiping Lu, Kyunghyun Cho, Jiajun Wu, Li Fei-Fei,
+            Lijuan Wang, Yejin Choi, Manling Li
+          </div>
+          <div class="pub-venue">Open Source Project &nbsp;<span style="color:red;">Best Poster @ MMLS 2025 · Invited talks @ DeepMind, UIUC NLP Group, GenAI Week 25</span></div>
+          <div class="pub-links">
+            <a href="https://ragen-ai.github.io/">Homepage</a>
+            <a href="https://arxiv.org/abs/2504.20073">Paper</a>
+            <a href="http://github.com/ZihanWang314/ragen">Code</a>
+            <a href="/pdf/RAGEN_poster.pdf">Poster</a>
+          </div>
+          <div class="pub-desc">RAGEN introduces <b>StarPO</b> (State-Thinking-Actions-Reward Policy Optimization) to train LLM reasoning agents via RL in multi-turn, stochastic environments.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/mindcube.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> Spatial Mental Modeling from Limited Views</papertitle>
-              <br>
-              <a href="https://yyyybq.github.io/BaiqiaoYIN.github.io/" rel="nofollow">Baiqiao Yin*</a>,
-              <a href="https://qinengwang-aiden.github.io/" rel="nofollow">Qineng Wang*</a>,
-              <a href="https://williamzhangsjtu.github.io/" rel="nofollow">Pingyue Zhang</a>,
-              <a href="https://sterzhang.github.io/" rel="nofollow">Jianshu Zhang</a>,
-              <a href="https://jameskrw.github.io/" rel="nofollow">Kangrui Wang</a>,
-              <strong>Zihan Wang</strong>,
-              <a href="https://jieyuz2.github.io/" rel="nofollow">Jieyu Zhang</a>,
-              <a href="https://keshik6.github.io/" rel="nofollow">Keshigeyan Chandrasegaran</a>,
-              <a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/liu-han.html" rel="nofollow">Han Liu</a>,
-              <a href="https://ranjaykrishna.com/" rel="nofollow">Ranjay Krishna</a>,
-              <a href="https://www.sainingxie.com/" rel="nofollow">Saining Xie</a>,
-              <a href="https://jiajunwu.com/" rel="nofollow">Jiajun Wu<sup class="affiliation-marker" data-astro-cid-bbe6dxrz="">†</sup></a>,
-              <a href="https://profiles.stanford.edu/fei-fei-li" rel="nofollow">Li Fei-Fei<sup class="affiliation-marker" data-astro-cid-bbe6dxrz="">†</sup></a>
-              <a href="https://limanling.github.io/" rel="nofollow">Manling Li<sup class="affiliation-marker" data-astro-cid-bbe6dxrz="">†</sup></a>,
-              <br>
-              <em><span style="color:red;">Outstanding Paper @ NeurIPS 2025 LAW, Best Paper @ ICCV 2025 SP4V, The Best of ICCV featured by Voxel51</span></em>
-              <br>
-              <a href="https://mind-cube.github.io" style="vertical-align: middle;">[Project Page]</a>
-              <a href="https://arxiv.org/abs/2506.21458" style="vertical-align: middle;">[Paper]</a>
-              <a href="https://github.com/mll-lab-nu/MindCube" style="vertical-align: middle;">[Code]</a>
-              <a href="https://huggingface.co/datasets/MLL-Lab/MindCube" style="vertical-align: middle;">[Dataset]</a>
-              <a href="https://x.com/ManlingLi_/status/1939760677133987952" style="vertical-align: middle;">[X Post]</a>
-              <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/mll-lab-nu/MindCube?style=social" style="vertical-align: middle;">
-              <p>
-                MindCube curates 21K spatial reasoning questions over 3K scenes and shows that guiding VLMs to map-then-reason boosts accuracy from 37.8% to 70.7%, highlighting cognitive mapping and reinforcement learning as keys to spatial mental modeling.
-              </p>
-              <br>
-            </td>
-          </tr>
+      <!-- Chain-of-Experts -->
+      <div class="pub-card" data-tag="efficiency">
+        <div class="pub-thumb"><img src="images/coe.png" alt="Chain-of-Experts"></div>
+        <div class="pub-body">
+          <div class="pub-title">Chain-of-Experts: Unlocking the Communication Power of Mixture-of-Experts Models</div>
+          <div class="pub-authors">
+            <strong>Zihan Wang*</strong>, Rui Pan*, Jiarui Yao, Róbert Csordás, Linjie Li,
+            Lu Yin, Jiajun Wu, Tong Zhang, Manling Li†, Shiwei Liu†
+          </div>
+          <div class="pub-venue">arXiv Preprint</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.18945">Paper</a>
+            <a href="https://x.com/wzihanw/status/1896601518612021709">X Post</a>
+            <a href="https://github.com/ZihanWang314/coe">Code</a>
+          </div>
+          <div class="pub-desc"><b>CoE</b> enables sequential communication between MoE experts, achieving 17.6–42% lower memory usage and reducing validation loss on math benchmarks from 1.20 to 1.12.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/unary_feedback.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> A Simple "Try Again" Can Elicit Multi-Turn LLM Reasoning</papertitle>
-              <br>
-              <a href="https://lichengliu.com/" rel="nofollow">Licheng Liu</a><strong>*</strong>,
-              <strong>Zihan Wang*</strong>,
-              <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en" rel="nofollow">Linjie Li</a>,
-              <a href="https://scholar.google.com/citations?user=tkc1yZ0AAAAJ&hl=en" rel="nofollow">Chenwei Xu</a>,
-              <a href="https://2prime.github.io/" rel="nofollow">Yiping Lu</a>,
-              <a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/liu-han.html" rel="nofollow">Han Liu</a>,
-              <a href="https://avsil.github.io/" rel="nofollow">Avirup Sil</a>,
-              <a href="https://limanling.github.io/" rel="nofollow">Manling Li</a>
-              <br>
-              <em>Preprint 2025</em>
-              <br>
-              <a href="https://unary-feedback.github.io/" style="vertical-align: middle;">[Project Page]</a>
-              <a href="https://arxiv.org/abs/2507.14295" style="vertical-align: middle;">[Paper]</a>
-              <a href="https://github.com/lichengliu03/unary-feedback" style="vertical-align: middle;">[Code]</a>
-              <a href="https://x.com/liulicheng10/status/1947848088712056936" style="vertical-align: middle;">[X Post]</a>
-              <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/lichengliu03/unary-feedback?style=social" style="vertical-align: middle;">
-              <p>
-                Unary Feedback as Observation (UFO) shows that minimal prompts like &ldquo;try again&rdquo; keep single-turn quality while improving multi-turn accuracy by up to 14%, delivering a plug-and-play RL recipe for reflective reasoning agents.
-              </p>
-              <br>
-            </td>
-          </tr>
+      <!-- T* / LongVideoHaystack -->
+      <div class="pub-card" data-tag="multimodal">
+        <div class="pub-thumb"><img src="images/tstar.png" alt="T*"></div>
+        <div class="pub-body">
+          <div class="pub-title">Re-thinking Temporal Search for Long-Form Video Understanding (T*)</div>
+          <div class="pub-authors">
+            Jinhui Ye*, <strong>Zihan Wang*</strong>, Haosen Sun, Keshigeyan Chandrasegaran,
+            Zane Durante, Cristobal Eyzaguirre, Yonatan Bisk, Juan Carlos Niebles,
+            Ehsan Adeli, Li Fei-Fei, Jiajun Wu, Manling Li
+          </div>
+          <div class="pub-venue">CVPR 2025 &nbsp;<span style="color:red;">Oral @ ICCV 2025 LongVid-Foundations · Featured by Stanford AI Blog</span></div>
+          <div class="pub-links">
+            <a href="https://longvideohaystack.github.io/">Project Page</a>
+            <a href="https://arxiv.org/pdf/2504.02259">Paper</a>
+            <a href="https://huggingface.co/datasets/LVHaystack/LongVideoHaystack">Dataset</a>
+            <a href="https://github.com/LongVideoHaystack/TStar">Code</a>
+            <a href="https://ai.stanford.edu/blog/tstar/">Stanford AI Blog</a>
+          </div>
+          <div class="pub-desc"><b>LongVideoHaystack</b>: 480-hour video temporal search dataset with 15,092 instances. T* boosts GPT-4o from 50.5% to 53.1% and LLaVA-OV from 56.5% to 62.4% on LongVideoBench XL.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/ragen.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[New]</span> RAGEN: Training Agents by Reinforcing Reasoning</papertitle>
-              <br>
-              <strong>Zihan Wang*</strong>, 
-              <a href="https://jameskrw.github.io/" rel="nofollow">Kangrui Wang*</a>, 
-              <a href="https://qinengwang-aiden.github.io/" rel="nofollow">Qineng Wang*</a>, 
-              <a href="https://williamzhangsjtu.github.io/" rel="nofollow">Pingyue Zhang*</a>, 
-              <a href="https://scholar.google.com/citations?user=WR875gYAAAAJ&hl=en" rel="nofollow">Linjie Li*</a>, 
-              <a href="https://zyang-ur.github.io/" rel="nofollow">Zhengyuan Yang</a>, 
-              <a href="" rel="nofollow">Xing Jin</a>, 
-              <a href="https://www.linkedin.com/in/kefan-yu-22723a25b/en/" rel="nofollow">Kefan Yu</a>, 
-              <a href="https://www.linkedin.com/in/menhguin/?originalSubdomain=sg" rel="nofollow">Minh Nhat Nguyen</a>, 
-              <a href="https://github.com/lichengliu03" rel="nofollow">Licheng Liu</a>, 
-              <a href="https://www.linkedin.com/in/eli-gottlieb1" rel="nofollow">Eli Gottlieb</a>, 		    
-              <a href="https://http://2prime.github.io/" rel="nofollow">Yiping Lu</a>, 
-              <a href="https://kyunghyuncho.me/" rel="nofollow">Kyunghyun Cho</a>, 
-              <a href="https://jiajunwu.com/" rel="nofollow">Jiajun Wu</a>, 
-              <a href="https://profiles.stanford.edu/fei-fei-li" rel="nofollow">Li Fei-Fei</a>, 
-              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/" rel="nofollow">Lijuan Wang</a>, 
-              <a href="https://homes.cs.washington.edu/~yejin/" rel="nofollow">Yejin Choi</a>, 
-              <a href="https://limanling.github.io/" rel="nofollow">Manling Li</a>
-              <br>
-              <em>Open Source Project</em> 
-              <br>
-              <a href="https://ragen-ai.github.io/" style="vertical-align: middle;">[Homepage]</a>
-              <a href="https://x.com/wzihanw/status/1915052871474712858" style="vertical-align: middle;">[X Post]</a>
-              <a href="https://arxiv.org/abs/2504.20073" style="vertical-align: middle;">[Paper]</a>
-              <a href="http://github.com/ZihanWang314/ragen" style="vertical-align: middle;">[Code]</a>
-		<a href="/pdf/RAGEN_poster.pdf" style="vertical-align: middle;">[Poster]</a><span style="color:red;vertical-align: middle;">(Best Poster @ MMLS 2025, invited talk @ DeepMind, UIUC NLP Group, GenAI Week 25)</span>
-              <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ZihanWang314/ragen?style=social" style="vertical-align: middle;">
-              <p>
-                We introduce <b>RAGEN</b> built upon the general multi-turn RL framework called <b>State-Thinking-Actions-Reward Policy Optimization</b> (StarPO) to train LLM reasoning agents via RL in multi-turn, stochastic environments. We observe how and why models would collapse in multi-turn RL, and show several limitations of agent reasoning under current RL paradigms.
-              </p>
-              </td>
-          </tr>
+      <!-- ESFT -->
+      <div class="pub-card" data-tag="efficiency">
+        <div class="pub-thumb"><img src="images/esft.png" alt="ESFT"></div>
+        <div class="pub-body">
+          <div class="pub-title">Expert-Specialized Fine-Tuning for Sparse Architectural LLMs (ESFT)</div>
+          <div class="pub-authors">
+            <strong>Zihan Wang</strong>, Deli Chen, Damai Dai, Runxin Xu, Zhuoshu Li, Yu Wu
+          </div>
+          <div class="pub-venue">EMNLP 2024</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2407.01906">Paper</a>
+            <a href="https://github.com/deepseek-ai/ESFT">Code</a>
+          </div>
+          <div class="pub-desc">By fine-tuning down to 5% of experts per layer in MoE LLMs, near-full performance is achieved with far lower compute cost.</div>
+        </div>
+      </div>
 
-	<tr>
-	  <td style="padding:20px;width:27%;vertical-align:middle">
-	    <div class="one">
-	      <img src="images/coe.png" width="190">
-	    </div>
-	  </td>
-	  <td style="padding:20px;width:67%;vertical-align:middle">
-	    <papertitle><span style="color:red;">[New]</span> Chain-of-Experts: Unlocking the Communication Power of Mixture-of-Experts Models</papertitle>
-	    <br>
-	    <a href="https://github.com/ZihanWang314">Zihan Wang*</a>,
-	    <a href="https://research4pan.github.io/">Rui Pan*</a>,
-	    <a href="https://jiaruiyao.github.io/">Jiarui Yao</a>,
-	    <a href="https://robertcsordas.github.io/">Róbert Csordás</a>,
-	    <a href="https://www.microsoft.com/en-us/research/people/linjli/">Linjie Li</a>,
-	    <a href="https://luuyin.com/">Lu Yin</a>,
-	    <a href="https://jiajunwu.com/">Jiajun Wu</a>,
-	    <a href="https://tongzhang-ml.org/">Tong Zhang</a>,
-	    <a href="https://limanling.github.io/">Manling Li†</a>,
-	    <a href="https://shiweiliuiiiiiii.github.io/">Shiwei Liu†</a>
-	    <br>
-	    <em>arXiv Preprint</em>
-	    <br>
-	    [<a href="https://arxiv.org/abs/2506.18945">Paper</a>]
-	    [<a href="https://x.com/wzihanw/status/1896601518612021709">X Post</a>]
-	    [<a href="https://www.notion.so/Chain-of-Experts-Unlocking-the-Communication-Power-of-MoEs-1ab9bb750b7980048d43e6aab3537cea?pvs=21">Blog</a>]
-	    [<a href="https://github.com/ZihanWang314/coe">Code</a>]
-	    <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ZihanWang314/coe?style=social" style="vertical-align: middle;">
-	    <p>
-	      We propose <b>Chain-of-Experts (CoE)</b>, enabling <b>sequential communication</b> between MoE experts by processing tokens through multiple intra-layer iterations. CoE achieves <b>17.6–42%</b> lower memory usage and reduces validation loss on Math benchmarks from <b>1.20 to 1.12</b> under comparable compute.
-	    </p>
-	  </td>
-	</tr>
+      <!-- MINT -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/MINT.png" alt="MINT"></div>
+        <div class="pub-body">
+          <div class="pub-title">MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback</div>
+          <div class="pub-authors">
+            Xingyao Wang*, <strong>Zihan Wang*</strong>, Jiateng Liu, Yangyi Chen, Lifan Yuan, Hao Peng, Heng Ji
+          </div>
+          <div class="pub-venue">ICLR 2024</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2309.10691">Paper</a>
+            <a href="https://xingyaoww.github.io/mint-bench">Project Page</a>
+            <a href="https://github.com/xingyaoww/mint-bench">Code</a>
+          </div>
+          <div class="pub-desc"><b>MINT</b> benchmarks LLMs in multi-turn interactions with tools and language feedback, revealing limitations in existing RLHF and SIFT methods.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/tstar.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[Highlight]</span> Re-thinking Temporal Search for Long-Form Video Understanding</papertitle>
-              <br>
-              <a href="https://jhuiye.com/">Jinhui Ye</a><strong>*</strong>,
-              <strong>Zihan Wang*</strong>,
-              <a href="https://haosensun.github.io/">Haosen Sun</a>,
-              <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>,
-              <a href="https://zanedurante.github.io/">Zane Durante</a>,
-              <a href="https://ceyzaguirre4.github.io/">Cristobal Eyzaguirre</a>,
-              <a href="https://talkingtorobots.com/yonatanbisk.html">Yonatan Bisk</a>,
-              <a href="https://www.niebles.net/">Juan Carlos Niebles</a>,
-              <a href="https://profiles.stanford.edu/ehsan-adeli">Ehsan Adeli</a>,
-              <a href="https://profiles.stanford.edu/fei-fei-li/">Li Fei-Fei</a>,
-              <a href="https://jiajunwu.com/">Jiajun Wu</a>,
-              <a href="https://limanling.github.io/">Manling Li</a>  
-              <br>
-              <em>CVPR 2025</em>, <span style="color:red;">Oral@ICCV 2025 LongVid-Foundations</span>, <span style="color:red;">Featured by Stanford AI Blog</span>
-              <br>
-              <!-- <a href="http://github.com/ZihanWang314/ragen" style="vertical-align: middle;">[Code]</a> -->
-              <!-- <img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ZihanWang314/ragen?style=social" style="vertical-align: middle;"> -->
-		[<a href="https://longvideohaystack.github.io/">Project Page</a>]
-		[<a href="https://x.com/wzihanw/status/1908284905777488215 ">X Post</a>]
-		[<a href="https://huggingface.co/datasets/LVHaystack/LongVideoHaystack">Dataset</a>]
-		[<a href="https://arxiv.org/pdf/2504.02259">Paper</a>]
-		[<a href="https://github.com/LongVideoHaystack/TStar">Code</a>]
-		[<a href="https://ai.stanford.edu/blog/tstar/">Stanford AI Blog</a>]
-		[<a href="https://www.lvhaystackai.com/">Demo</a>]
-		[<a href="pdf/TStar_poster.pdf">Poster</a>]
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/LongVideoHaystack/TStar?style=social" style="vertical-align: middle;">
-		    <br>
-              <p>
-                We introduce <b>LongVideoHaystack</b>, a 480-hour video temporal search dataset with 15,092 human-annotated instances, where SOTA scores <b>2.1%</b> Temporal F<sub>1</sub>. Our temporal search framework <b>T*</b> boosts GPT-4o from 50.5% to <b>53.1%</b> and LLaVA-OV from 56.5% to <b>62.4%</b> on LongVideoBench XL.
-              </p>
+      <!-- DeepSeek-V2 -->
+      <div class="pub-card" data-tag="efficiency">
+        <div class="pub-thumb"><img src="https://github.com/deepseek-ai/DeepSeek-V2/raw/main/figures/activationparameters.png?raw=true" alt="DeepSeek-V2"></div>
+        <div class="pub-body">
+          <div class="pub-title">DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model</div>
+          <div class="pub-authors">
+            DeepSeek AI (157 authors including <strong>Zihan Wang</strong>)
+          </div>
+          <div class="pub-venue">Technical Report 2024</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2405.04434">Paper</a>
+            <a href="https://github.com/deepseek-ai/DeepSeek-V2">Code</a>
+          </div>
+          <div class="pub-desc">DeepSeek-V2 is a strong MoE model with 23B activated parameters, saving 42.5% training costs and boosting generation throughput by up to 5.76x vs. DeepSeek 67B.</div>
+        </div>
+      </div>
 
+    </div><!-- /pub-list -->
+  </section>
 
+  <!-- ── Talks ── -->
+  <section id="talks">
+    <h2>Invited Talks</h2>
+    <ul class="talk-list">
+      <li class="talk-item">
+        <span class="talk-date">2025.04</span>
+        <span class="talk-main">Training LLM Agents by Reinforcing Reasoning<span class="talk-venue">UIUC NLP Reading Group</span></span>
+        <span class="talk-links"><a href="pdf/RAGEN_presentation.pdf">Slides</a></span>
+      </li>
+      <li class="talk-item">
+        <span class="talk-date">2023.11</span>
+        <span class="talk-main">LLM Agents with Language Feedback<span class="talk-venue">Chinese R Conference</span></span>
+        <span class="talk-links"><a href="https://china-r.cosx.org/bj2023/lectures.html">Link</a></span>
+      </li>
+      <li class="talk-item">
+        <span class="talk-date">2023.05</span>
+        <span class="talk-main">Retrieval Augmented Language Models and Applications<span class="talk-venue">RUC Science and Technology Fair</span></span>
+        <span class="talk-links"><a href="http://ai.ruc.edu.cn/newslist/newsdetail/20230606002.html">Link</a></span>
+      </li>
+      <li class="talk-item">
+        <span class="talk-date">2023.03</span>
+        <span class="talk-main">Large Language Models and Applications<span class="talk-venue">Capital of Statistics</span></span>
+        <span class="talk-links"><a href="https://www.bilibili.com/video/BV1EL411C79J/">Video</a></span>
+      </li>
+      <li class="talk-item">
+        <span class="talk-date">2023.01</span>
+        <span class="talk-main">Pre-trained Language Models and Applications<span class="talk-venue">RUC Mingli College</span></span>
+        <span class="talk-links"><a href="https://mp.weixin.qq.com/s/ecaswp2h04tCgL7O4B5RGQ">Link</a></span>
+      </li>
+    </ul>
+  </section>
 
-              </td>
-          </tr>
+  <!-- ── Awards ── -->
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul>
+      <li><b>Tinker Research Grant</b>, Thinking Machine ($5,000), 2025</li>
+      <li><b>McCormick School of Engineering Fellowship</b>, Northwestern, 2024</li>
+      <li><b>Baosteel Outstanding Student Award</b>, 7/30000+, Renmin Univ. of China, 2023</li>
+      <li><b>First Class Academic Excellence Award</b> (top 3% GPA), Renmin Univ. of China, 2021</li>
+      <li><b>Provincial First Prize</b>, Contemporary Undergraduate Mathematical Contest in Modeling, 2021</li>
+      <li><b>Honorable Mention</b>, Mathematical Contest in Modeling and Interdisciplinary Contest in Modeling, 2021</li>
+    </ul>
+  </section>
 
-            <tr>
-              <td style="padding:20px;width:27%;vertical-align:middle">
-                <div class="one">
-                  <img src='images/esft.png' width="190">
-                </div>
-              </td>
-              <td style="padding:20px;width:67%;vertical-align:middle">
-		<papertitle><span style="color:red;">[Highlight]</span> Let the Expert Stick to His Last: Expert-Specialized Fine-Tuning for Sparse Architectural Large Language Models</papertitle>
-                <br>
-                <strong>Zihan Wang</strong>,
-                <a href="https://victorchen96.github.io/chendeli.io/">Deli Chen</a>,
-                <a href="https://scholar.google.com.hk/citations?user=8b-ysf0NWVoC&hl=zh-CN">Damai Dai</a>,
-                <a href="https://runxinxu.github.io/aboutme/">Runxin Xu</a>,
-                <a href="http://www.idi.zju.edu.cn/member/3053.html">Zhuoshu Li</a>,
-                <a href="https://scholar.google.com/citations?user=aQizmzsAAAAJ&hl=zh-CN"> Yu Wu </a>
-                <br>
-                <em>EMNLP 2024</em>
-                <br>
-		<a href="https://arxiv.org/abs/2407.01906" style="vertical-align: middle;">[Paper]</a>
-		<a href="https://github.com/deepseek-ai/ESFT" style="vertical-align: middle;">[Code]</a>
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/deepseek-ai/ESFT?style=social" style="vertical-align: middle;">
-                <p>
-                  We harness the <b> Specialized Power of Experts </b> in MoE LLMs through ESFT. By fine-tuning <b> Down to 5% Experts </b> in a layer, near-full performance can be achieved. 
-                </p>
-                <br>
-                </td>
-            </tr>
-
-            
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/MINT.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle><span style="color:red;">[Highlight]</span> MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback</papertitle>
-              <br>
-              <a href="https://xingyaoww.github.io">Xingyao Wang*</a>,
-              <strong>Zihan Wang*</strong>,
-              <a href="https://lumos-jiateng.github.io">Jiateng Liu</a>,
-              <a href="https://yangyi-chen.github.io">Yangyi Chen</a>,
-              <a href="https://lifan-yuan.github.io">Lifan Yuan</a>,
-              <a href="https://haopeng-nlp.github.io/">Hao Peng</a>,
-              <a href="http://blender.cs.illinois.edu/hengji.html">Heng Ji</a>
-              <br>
-              <em>ICLR 2024</em>
-              <br>
-		<a href="https://arxiv.org/abs/2309.10691" style="vertical-align: middle;">[Paper]</a>
-		<a href="https://xingyaoww.github.io/mint-bench" style="vertical-align: middle;">[Project Page]</a>
-		<a href="https://github.com/xingyaoww/mint-bench" style="vertical-align: middle;">[Code]</a>
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/xingyaoww/mint-bench?style=social" style="vertical-align: middle;">
-              <p>
-		We introduce <b>MINT</b>, a benchmark for evaluating LLMs in <b>Multi-turn Interactions</b> with tools and language feedback. 
-                MINT reveals several limitations in existing RLHF and SIFT methods on multi-turn interaction.
-              </p>
-              <br>
-              </td>
-          </tr>
-
-	  <tr>
-              <td style="padding:20px;width:27%;vertical-align:middle">
-                <div class="one">
-                  <img src='https://github.com/deepseek-ai/DeepSeek-V2/raw/main/figures/activationparameters.png?raw=true' width="190">
-                </div>
-              </td>
-              <td style="padding:20px;width:67%;vertical-align:middle">
-		<papertitle><span style="color:red;">[Highlight]</span> DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model</papertitle>
-                <br>
-		<a href="https://chat.deepseek.com"> DeepSeek AI</a> (157 authors including <strong> Zihan Wang</strong>)
-                <br>
-		<a href="https://arxiv.org/abs/2405.04434" style="vertical-align: middle;">[Paper]</a>
-		<a href="https://github.com/deepseek-ai/DeepSeek-V2?tab=readme-ov-file" style="vertical-align: middle;">[Code]</a>
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/deepseek-ai/DeepSeek-V2?style=social" style="vertical-align: middle;">
-                <p>
-		DeepSeek-V2 is a strong MoE model with 23B activated parameters. It achieves stronger 
-		performance compared to DeepSeek 67B, <b>saving 42.5% training costs and boosting generation by up to 5.76x</b>.
-                </p>
-                <br>
-                </td>
-            </tr>
-<!-- 
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/NOVO.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle>NOVO: Learnable and Interpretable Document Identifiers for Model Based IR</papertitle>
-              <br>
-              <strong>Zihan Wang</strong>,
-              <a href="https://www.zhouyujia.cn/">Yujia Zhou</a>,
-              Yiteng Tu, 
-              <a href="http://playbigdata.ruc.edu.cn/dou">Zhicheng Dou</a>.
-              <br>
-              <em>CIKM 2023, <b>Oral Presentation</b></em>
-              <br>
-		<a href="pdf/cikm23.pdf" style="vertical-align: middle;">[Paper]</a>
-		<a href="https://github.com/ZihanWang314/NOVO" style="vertical-align: middle;">[Code]</a>
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/zihanwang314/NOVO?style=social" style="vertical-align: middle;">
-              <p> 
-                We propose learnable NOVO document-IDs for model-based IR. 
-                NOVO IDs consist of non-overlapping n-gram sets to identify documents,
-                optimized through denoising queries and retrieval tasks.
-              </p>
-              <br>
-              </td>
-          </tr>
-
-          
-          <tr>
-            <td style="padding:20px;width:27%;vertical-align:middle">
-              <div class="one">
-                <img src='images/retallm.png' width="190">
-              </div>
-            </td>
-            <td style="padding:20px;width:67%;vertical-align:middle">
-              <papertitle>RetaLLM: A Retrieval-Augmented Large Language Model Toolkit</papertitle>
-              <br>
-              <a href="https://github.com/rucliujn">Jiongnan Liu</a>,
-              <a href="https://github.com/ignorejjj">Jiajie Jin</a>,
-              <strong>Zihan Wang</strong>, 
-              <a href="https://paperswithcode.com/search?q=author%3AJiehan+Cheng">Jiehan Cheng</a>,
-              <a href="http://playbigdata.ruc.edu.cn/dou">Zhicheng Dou</a>,
-              <a href="https://scholar.google.com/citations?hl=en&user=tbxCHJgAAAAJ">Ji-Rong Wen</a>
-              <br>
-		<a href="https://arxiv.org/abs/2306.05212" style="vertical-align: middle;">[Paper]</a>
-		<a href="https://github.com/ruc-gsai/yulan-ir" style="vertical-align: middle;">[Code]</a>
-		<img id="resizeImg" alt="" src="https://img.shields.io/github/stars/ruc-gsai/yulan-ir?style=social" style="vertical-align: middle;">
-		
-              <p> 
-                We develop a Retreival-Augmented LLM toolkit for better interaction between LLMs and retrieval systems.
-                Feature modules: request rewriting, passage extraction, and fact-checking.      
-              </p>
-              </td>
-          </tr> -->
-
-        </tbody></table>
-
-
-        <heading>Invited Research Presentations</heading>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:10px">
-	    	<ul>
+  <!-- ── Service ── -->
+  <section id="service">
+    <h2>Professional Service</h2>
+    <ul>
       <li>
-        <a href="pdf/RAGEN_presentation.pdf">Training LLM Agents by Reinforcing Reasoning</a>, 
-        UIUC NLP Reading Group &nbsp;&nbsp;&nbsp;&nbsp; 2025.04
+        <b>Reviewer</b> —
+        EMNLP 2024 (<a href="https://x.com/emnlpmeeting/status/1857169065569292540">Outstanding Reviewer</a>),
+        ICLR 2025–2026, AAAI 2025, ACL 2025, CVPR 2025, NeurIPS 2025
       </li>
       <li>
-		    <a href="https://china-r.cosx.org/bj2023/lectures.html">LLM Agents with Language Feedback</a>, 
-		    Chinese R Conference &nbsp;&nbsp;&nbsp;&nbsp; 2023.11
-		  </li>
-		  <li>
-		    <a href="http://ai.ruc.edu.cn/newslist/newsdetail/20230606002.html">Retrieval Augmented Language Models and Applications</a>,
-		    RUC Science and Technology Fair &nbsp;&nbsp;&nbsp;&nbsp; 2023.05
-		  </li>
-		  <li>
-		    <a href="https://www.bilibili.com/video/BV1EL411C79J/?spm_id_from=333.337.search-card.all.click&vd_source=ad803afa85e584a3fc4cbfa14cca9a57">Large Language Models and Applications</a>,
-		    Capital of Statistics &nbsp;&nbsp;&nbsp;&nbsp; 2023.03
-		  </li>
-		  <li>
-		    <a href="https://mp.weixin.qq.com/s/ecaswp2h04tCgL7O4B5RGQ">Pre-trained Language Models and Applications</a>,
-		    RUC Mingli College &nbsp;&nbsp;&nbsp;&nbsp; 2023.01
-		  </li>
-		</ul>
-            </td>
-          </tr>
-        </tbody></table>
+        <b>Session Organization</b> —
+        Language Models &amp; Agents session at <a href="https://china-r.cosx.org/bj2023/lectures.html">Chinese R Conference 2023</a>;
+        BoF and Affinity Group at <a href="https://2024.emnlp.org/program/bof/">EMNLP 2024</a>;
+        Foundation Models Meet Embodied Agents Workshop at <a href="https://foundation-models-meet-embodied-agents.github.io/cvpr2025/">CVPR 2025</a>
+      </li>
+      <li>
+        <b>Academic Mentor</b> —
+        <a href="http://ai.ruc.edu.cn/newslist/notice/20230411001.html">National University Student Innovation Program (2023, No. 3)</a>
+      </li>
+      <li>
+        <b>Selected Translations (EN→ZH / ZH→EN)</b> —
+        <a href="https://drive.google.com/file/d/1DW5ohZWxoCEOdrUQjokKreuArHqJdtKb/view">Unveiling DeepSeek: A Story of Even More Radical Chinese Technological Idealism</a>,
+        <a href="https://drive.google.com/file/d/1gLw9jpp61ybainydNa2kXpNs0PLiICn5/view">The Madness of High-Flyer</a>,
+        <a href="https://cosx.org/2021/11/interview-of-rubin/">COS Interview with Donald B. Rubin</a>
+      </li>
+    </ul>
+  </section>
 
+  <!-- ── Societal Engagements ── -->
+  <section id="engagements">
+    <h2>Selected Societal Engagements</h2>
+    <ul>
+      <li>
+        Blogs (<a href="https://x.com/wzihanw/highlights">X Highlights</a>):
+        <a href="https://x.com/wzihanw/status/1872826641518395587">DeepSeek Culture: How Innovation Thrives</a> ·
+        <a href="https://x.com/wzihanw/status/1879034670073122928">Text Can Speak</a> ·
+        <a href="https://x.com/wzihanw/status/1890231790255894864">Min-p as a rule of physics</a> ·
+        <a href="https://x.com/wzihanw/status/1898399289640202619">Empirical Methods on Saving Money in Research</a>
+      </li>
+      <li>
+        Press Coverage:
+        <a href="https://mp.weixin.qq.com/s/z70njqW_iuXeTZ7TlUDFbA">LatePost</a> ·
+        <a href="https://www.technologyreview.com/2025/01/24/1110526/china-deepseek-top-ai-despite-sanctions">MIT Tech Review</a> ·
+        <a href="https://www.nytimes.com/2025/01/23/technology/deepseek-china-ai-chips.html">New York Times</a> ·
+        <a href="https://www.cnn.com/2025/01/28/china/china-deepseek-ai-success-tech-intl-hnk/index.html">CNN</a> ·
+        <a href="https://www.bloomberg.com/news/articles/2025-01-28/chinese-quant-whiz-built-deepseek-in-the-shadow-of-a-hedge-fund-rout">Bloomberg</a> ·
+        <a href="https://venturebeat.com/ai/former-deepseeker-and-collaborators-release-new-method-for-training-reliable-ai-agents-ragen/">VentureBeat</a>
+      </li>
+      <li>
+        Zhihu posts:
+        <a href="https://www.zhihu.com/question/305278806/answer/3130954977">How do you determine if a professor is an academic rising star?</a> ·
+        <a href="https://www.zhihu.com/question/424422013/answer/3236350492">From a non-elite university, winning many awards in ACM competitions…</a>
+      </li>
+    </ul>
+  </section>
 
-        <heading>Professional Service</heading>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="5"><tbody>
-          <tr>
-            <td style="padding:10px">
-	    	<ul>
-			  <li>
-				  <b>Reviewer - </b> 
-				  EMNLP 2024 (<a href="https://x.com/emnlpmeeting/status/1857169065569292540">Outstanding Reviewer</a>), 
-				  ICLR 2025-2026,
-				  AAAI 2025,
-				  ACL 2025,
-				  CVPR 2025,
-				  NeurIPS 2025
-				  
-			  </li>
-			  <li><b>Session Organization - </b> 
-				  Session of Language Models & Agents in <a href="https://china-r.cosx.org/bj2023/lectures.html">Chinese R Conference 2023</a>,
-				   BoF and Affinity Group at <a href="https://2024.emnlp.org/program/bof/">EMNLP 2024</a>, Foundation Models Meet Embodied Agents Workshop at <a href="https://foundation-models-meet-embodied-agents.github.io/cvpr2025/">
-					   CVPR 2025</a>.
-			  </li>
-			  <li><b>Academic Mentor - </b> 
-				  <a href="http://ai.ruc.edu.cn/newslist/notice/20230411001.html">National University Student Innovation Program (2023, No. 3)</a>
-			  </li>
-			<li><b>Article Translation: English - </b> 
-				<a href="https://drive.google.com/file/d/1DW5ohZWxoCEOdrUQjokKreuArHqJdtKb/view">Unveiling DeepSeek: A Story of Even More Radical Chinese Technological Idealism</a>, 
-				<a href="https://drive.google.com/file/d/1gLw9jpp61ybainydNa2kXpNs0PLiICn5/view">The Madness of High-Flyer: A Hidden AI Giant’s Journey into Large Models</a>,
-				<b>Chinese - </b> 
-				<a href="https://cosx.org/2021/11/interview-of-rubin/">COS Interview with Donald B. Rubin</a>, 
-				<a href="https://mp.weixin.qq.com/s/UL0BK3s2CXVXUivhzU5ZKw">Core Views on AI Safety: When, Why, What, and How</a>
-			</li>
+  <!-- ── Misc ── -->
+  <section id="misc">
+    <h2>Misc</h2>
+    <ul>
+      <li>I like to work and chat with people from diverse backgrounds. Feel free to reach out for an online chat (or in person if you are in Evanston / Chicago Area).</li>
+      <li>I love Sandbox games like Minecraft, Danmaku games like Touhou Project, and Music games like Love Live. I also designed RPG games in primary school (with <a href="https://www.rpgmakerweb.com/products/rpg-maker-xp">RMXP</a>).</li>
+      <li>My dream was to be a vlogger — I post <a href="https://space.bilibili.com/2066036">videos on Bilibili</a> including vlogs, game records, and parody videos.</li>
+      <li>Beyond Chinese and English, I've picked up some Japanese from childhood anime. Favorites: ワンピース and Fate/stay night.</li>
+      <li>I grew up in Wuhan, China and studied at <a href="https://en.wikipedia.org/wiki/No.1_Middle_School_Affiliated_to_Central_China_Normal_University">No. 1 Middle School @ CCNU</a>.</li>
+    </ul>
+  </section>
 
-                </ul>
-            </td>
-          </tr>
-        </tbody></table>
+</main>
 
+<!-- ── Footer ── -->
+<footer>
+  <p>&copy; 2026 Zihan Wang &nbsp;&middot;&nbsp; Last updated April 2026</p>
+</footer>
 
-        <heading>Selected Societal Engagements</heading>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="5"><tbody>
-            <tr>
-            <td style="padding:10px">
-	    	<ul>
+<script>
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
 
-          <li>Blogs (See X <a href="https://x.com/wzihanw/highlights">Highlight Page</a> for more): <br>
-            - <a href="https://x.com/wzihanw/status/1872826641518395587">DeepSeek Culture: How Innovation Thrives</a> <br>
-            - <a href="https://x.com/wzihanw/status/1879034670073122928">Text Can Speak: A Chinese user's perspective on Xiaohongshu (RedNote) </a> <br>
-            - <a href="https://x.com/wzihanw/status/1890231790255894864">Min-p as a rule of physics</a> <br>
-	    - <a href="https://x.com/wzihanw/status/1898399289640202619">Empirical Methods on Saving Money in Research</a> <br>
-	    - To come soon: Empirical Methods on Saving <i>Time</i> in Research <br>
-              </li>
+  // ── News Show More / Show Less ──
+  const newsToggle = document.getElementById('news-toggle');
+  newsToggle.addEventListener('click', () => {
+    const hidden = document.querySelectorAll('.news-item.hidden');
+    if (hidden.length > 0) {
+      hidden.forEach(el => el.classList.remove('hidden'));
+      newsToggle.textContent = 'Show Less';
+    } else {
+      const all = document.querySelectorAll('.news-item');
+      all.forEach((el, i) => { if (i >= 8) el.classList.add('hidden'); });
+      newsToggle.textContent = 'Show More';
+    }
+  });
 
-              
-
-          <li>Posts (Zhihu, Chinese Q&A platform):<br>
-            - <a href="https://www.zhihu.com/question/305278806/answer/3130954977">How do you determine if a professor is an academic rising star?</a> <br>
-            - <a href="https://www.zhihu.com/question/424422013/answer/3236350492">From a non-elite university, winning many awards in ACM competitions. However, my low GPA keeps me away from scholarships—am I useless?</a> <br>
-            - <a href="https://www.zhihu.com/question/589704718/answer/2955855409">How has your NLP research changed since GPT-4's release?</a>
-              </li>
-          
-          <li> Press Coverage: <br>
-            <a href="https://mp.weixin.qq.com/s/z70njqW_iuXeTZ7TlUDFbA"> LatePost:  <i>To Open-Source or Not? Strategic Crossroads in the Era of LLM </i></a> <br>
-      	    <a href="https://mp.weixin.qq.com/s/J2n_ZOdSQzIiYwQVn2eq3g">Z Tech: <i>How do RL and MoE Ignite LLMs</i> (RL与MoE如何点燃大模型革命)</a> <br>	
-            More: <a href="https://www.technologyreview.com/2025/01/24/1110526/china-deepseek-top-ai-despite-sanctions">MIT Tech Review</a>,
-            <a href="https://www.nytimes.com/2025/01/23/technology/deepseek-china-ai-chips.html">New York Times (1</a>, <a href="https://www.nytimes.com/2025/01/28/business/deepseek-owner-china-ai.html">2)</a>, <a href="https://www.cnn.com/2025/01/28/china/china-deepseek-ai-success-tech-intl-hnk/index.html"> CNN</a>, <a href="https://www.bloomberg.com/news/articles/2025-01-28/chinese-quant-whiz-built-deepseek-in-the-shadow-of-a-hedge-fund-rout">Bloomberg</a>, <a href="https://venturebeat.com/ai/former-deepseeker-and-collaborators-release-new-method-for-training-reliable-ai-agents-ragen/"> VentureBeat</a>, <a href="https://mp.weixin.qq.com/s/BBV0H8pr-zv0cEWim1jHNg">Z Potentials</a>, <a href="https://mp.weixin.qq.com/s/JanxznZOCnTJVPXmnw5MbA">Weixin</a> <br>
-        
-          </li>
-
-
-                </ul>
-            </td>
-          </tr>
-        </tbody></table>
-
-        
-
-
-        <heading>Awards</heading>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="5"><tbody>
-          <tr>
-            <td style="padding:10px">
-                <ul>
-                  <li><b>Tinker Research Grant</b>, Thinking Machine ($5,000), 2025</li>
-                  <li><b>McCormick School of Engineering Fellowship</b>, Northwestern, 2024</li>
-                  <li><b>Baosteel Outstanding Student Award</b>, 7/30000+, Renmin Univ. of China, 2023</li>
-                  <li><b>First Class Academic Excellence Award</b> (top 3% GPA), Renmin Univ. of China, 2021</li>
-                  <li><b>Provincial First Prize</b>, Contemporary Undergraduate Mathematical Contest in
-                    Modeling, 2021</li>
-                  <li><b>Honorable Mention</b>, Mathematical Contest in Modeling and Interdisciplinary
-                    Contest in Modeling, 2021</li>
-                </ul>
-            </td>
-          </tr>
-        </tbody></table>
-
-        
-        <heading>Misc</heading>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0"><tbody>
-          <tr>
-            <td style="padding:10px">
-                <ul>
-                  <li> I like to work and chat with people from diverse backgrounds (🌈), 
-                    which I believe is the key to true innovation. 
-                    Feel free to reach out for an online chat (or in person if you are in Evanston / Chicago Area). </li>
-                  <li>I love Sandbox games like Minecraft, Danmaku games like Touhou Project, and Music games like Love Live.
-                    I also loved to design and make RPG games when I was in primary school (with 
-                    <a href="https://www.rpgmakerweb.com/products/rpg-maker-xp">RMXP</a> on WindowsXP).
-                  </li>
-                  <li>My dream was to be a vlogger and I post 
-                    <a href="https://space.bilibili.com/2066036?spm_id_from=333.337.0.0">videos</a>
-                    on bilibili, including vlogs, game playing records and some parody videos. 
-                  </li>
-                  <li>Beyond Chinese and English, I’ve picked up some Japanese due to my childhood love for anime. 
-                    My favorite Anime were ワンピース and Fate/stay night.
-                  </li>
-                  <li>
-                  I grew up in Wuhan, China and studied at <a href="https://en.wikipedia.org/wiki/No.1_Middle_School_Affiliated_to_Central_China_Normal_University"> No. 1 Middle School @ CCNU </a>. 
-                  I'm truly grateful for my time there.
-                  </li>
-                </ul>
-            </td>
-          </tr>
-
-
-        </tbody></table>
-
-<!--         <a class="twitter-timeline" data-height="496" data-theme="light" href="https://twitter.com/wzihanw?ref_src=twsrc%5Etfw">Tweets by wzihanw</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                Website design from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-    <tr style="padding:0px">
-      <td style="padding:2.5%;width:40%;vertical-align:middle">
-        <div class="page__footer">
-          <footer> <!-- start custom footer snippets --> 
-            <a href="/sitemap/">Sitemap</a> 
-            <!-- end custom footer snippets -->
-            <div class="page__footer-copyright">
-              <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=o89zY8a0ARtuHIK-X34murs3PrRBFGrB1jTX7j2kYt8&cl=ffffff&w=a"></script>
-            </div>
-          </footer>
-        </div>
-      </td>
-    </tr>
-  </tbody></table>
-
-  <script>
-    // Get the elements
-    const floatWindow = document.getElementById('floatWindow');
-    const openFloat = document.getElementById('openFloat');
-    const closeBtn = document.getElementById('closeBtn');
-  
-    // Open the float window when the link is clicked
-    openFloat.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default action of the link
-  
-        // Get the position of the link element
-        const rect = openFloat.getBoundingClientRect();
-  
-        // Position the floating window near the link
-        floatWindow.style.top = rect.top + window.scrollY + 30 + 'px'; // 30px below the link
-        floatWindow.style.left = rect.left + window.scrollX + 'px'; // Align it with the link horizontally
-  
-        // Display the floating window
-        floatWindow.style.display = 'block';
-    });
-  
-    // Close the float window when the close button is clicked
-    closeBtn.addEventListener('click', function() {
-        floatWindow.style.display = 'none';
-    });
-  
-    // Close the float window when clicking outside of it
-    window.addEventListener('click', function(event) {
-        if (event.target !== floatWindow && event.target !== openFloat && !floatWindow.contains(event.target)) {
-            floatWindow.style.display = 'none';
+  // ── Publication filter ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubCards   = document.querySelectorAll('.pub-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      pubCards.forEach(card => {
+        if (filter === 'all' || card.dataset.tag === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
         }
+      });
     });
-  </script>
-  
+  });
 
-  
+  // ── Research tags popover ──
+  const tagPapers = {
+    'agents': [
+      { title: 'RAGEN-2: Reasoning Collapse in Agentic RL', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/v2/' },
+      { title: 'VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents', venue: 'NeurIPS 2025', href: 'https://vagen-ai.github.io/' },
+      { title: 'A Simple "Try Again" Can Elicit Multi-Turn LLM Reasoning (UFO)', venue: 'Preprint 2025', href: 'https://unary-feedback.github.io/' },
+      { title: 'RAGEN: Training Agents by Reinforcing Reasoning', venue: 'Open Source · Best Poster @ MMLS 2025', href: 'https://ragen-ai.github.io/' },
+      { title: 'MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Feedback', venue: 'ICLR 2024', href: 'https://arxiv.org/abs/2309.10691' },
+    ],
+    'moe': [
+      { title: 'Chain-of-Experts: Unlocking Communication Power of MoE', venue: 'arXiv 2025', href: 'https://arxiv.org/abs/2506.18945' },
+      { title: 'ESFT: Expert-Specialized Fine-Tuning for Sparse LLMs', venue: 'EMNLP 2024', href: 'https://arxiv.org/abs/2407.01906' },
+      { title: 'DeepSeek-V2: Strong, Economical, Efficient MoE LM', venue: 'Technical Report 2024', href: 'https://arxiv.org/abs/2405.04434' },
+    ],
+    'long-context': [
+      { title: 'Re-thinking Temporal Search for Long-Form Video Understanding (T*)', venue: 'CVPR 2025 · Oral @ ICCV 2025', href: 'https://longvideohaystack.github.io/' },
+      { title: 'Spatial Mental Modeling from Limited Views (MindCube)', venue: 'Outstanding Paper @ NeurIPS 2025 LAW', href: 'https://mind-cube.github.io' },
+    ],
+    'multimodal': [
+      { title: 'Spatial Mental Modeling from Limited Views (MindCube)', venue: 'Outstanding Paper @ NeurIPS 2025 LAW', href: 'https://mind-cube.github.io' },
+      { title: 'VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents', venue: 'NeurIPS 2025', href: 'https://vagen-ai.github.io/' },
+      { title: 'Re-thinking Temporal Search for Long-Form Video Understanding (T*)', venue: 'CVPR 2025', href: 'https://longvideohaystack.github.io/' },
+    ],
+  };
+
+  const researchTags = document.querySelectorAll('.research-tag');
+  const tagPopover = document.getElementById('tag-popover');
+
+  function closeTagPopover() {
+    tagPopover.hidden = true;
+    tagPopover.innerHTML = '';
+    researchTags.forEach(t => t.classList.remove('active'));
+  }
+
+  function openTagPopover(key, tagEl) {
+    const papers = tagPapers[key] || [];
+    tagPopover.innerHTML = papers.map(p => `
+      <a class="tag-paper" href="${p.href}" target="_blank" rel="noopener">
+        <div class="tag-paper-title">${p.title}</div>
+        <div class="tag-paper-venue">${p.venue}</div>
+      </a>
+    `).join('');
+    tagPopover.hidden = false;
+    researchTags.forEach(t => t.classList.remove('active'));
+    tagEl.classList.add('active');
+  }
+
+  researchTags.forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const key = tag.dataset.research;
+      if (tag.classList.contains('active')) {
+        closeTagPopover();
+      } else {
+        openTagPopover(key, tag);
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!tagPopover.contains(e.target) && !e.target.closest('.research-tag')) {
+      closeTagPopover();
+    }
+  });
+
+  // ── Theme toggle ──
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
 </body>
-
 </html>
