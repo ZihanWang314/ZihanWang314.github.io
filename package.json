@@ -1,0 +1,11 @@
+{
+  "name": "zihanwang314-github-io",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "serve": "python3 server.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}
