@@ -1,6 +1,6 @@
 # ZihanWang314.github.io 主页改版记录
 
-整理自 2026-04-10 的 Claude Code 会话：基于 `~/Downloads/个人主页.docx` 中的散落想法，完成主页的整体设计与实现。
+整理自 2026-04-10 ~ 04-12 的 Claude Code 会话：基于 `~/Downloads/个人主页.docx` 中的散落想法，完成主页的整体设计与实现。
 
 ---
 
@@ -21,39 +21,43 @@
 
 ## 2. 12 个设计决策（grill-me 轮次 1）
 
-| # | 问题 | 决策 |
-|---|------|------|
-| 1 | 主题色 | 保留紫色 `#5b4dd6`（Northwestern 色），背景黑白极简 |
-| 2 | 背景渐变 | About 区顶部极淡紫→白渐变（`#f3f0ff` → `#ffffff`），其余纯白 |
-| 3 | Dark mode | 系统自动 + navbar 手动切换按钮（C 方案） |
-| 4 | Blog | 独立子页面 `blog.html`，navbar 加入口 |
-| 5 | 名字解释 | 不做（原计划的"何意味"放弃） |
-| 6 | 身份定位 | "Researcher at Northwestern"，保留导师信息 |
-| 7 | 论文缩略图 | 暂不改，之后作者自己换 input→output 图 |
-| 8 | Talks 格式 | 结构化列表：日期 · 机构 · 话题 · [Slides] |
-| 9 | Navbar | About / News / Publications / Talks / Awards / Blog（移除 Service） |
-| 10 | Bio 图标 | 加 LinkedIn (`https://www.linkedin.com/in/zenus`) |
-| 11 | 招募信息 | 保留红色高亮 |
-| 12 | 字体 | Lato → Inter |
+| #  | 问题       | 决策                                                                       |
+| -- | ---------- | -------------------------------------------------------------------------- |
+| 1  | 主题色     | 保留紫色 `#5b4dd6`（Northwestern 色），背景黑白极简                        |
+| 2  | 背景渐变   | About 区顶部极淡紫→白渐变（`#f3f0ff` → `#ffffff`），其余纯白              |
+| 3  | Dark mode  | 系统自动 + navbar 手动切换按钮（C 方案）                                   |
+| 4  | Blog       | 独立子页面 `blog.html`，navbar 加入口                                      |
+| 5  | 名字解释   | 不做（原计划的"何意味"放弃）                                               |
+| 6  | 身份定位   | "Researcher at Northwestern"，保留导师信息                                 |
+| 7  | 论文缩略图 | 暂不改，之后作者自己换 input→output 图                                     |
+| 8  | Talks 格式 | 结构化列表：日期 · 机构 · 话题 · [Slides]                                  |
+| 9  | Navbar     | About / News / Publications / Talks / Awards / Blog（移除 Service）        |
+| 10 | Bio 图标   | 加 LinkedIn (`https://www.linkedin.com/in/zenus`)                          |
+| 11 | 招募信息   | 保留红色高亮                                                               |
+| 12 | 字体       | Lato → Inter                                                               |
 
 ---
 
-## 3. 英雄区二次讨论（grill-me 轮次 2）
+## 3. 英雄区设计（grill-me 轮次 2）
 
-用户追加需求：**重要信息都在第一屏可见**，参考 muennighoff.com 的做法。最终方案：
+用户追加需求：**重要信息都在第一屏可见**，参考 muennighoff.com 的做法。
 
-- **布局**：About section 改为两栏（左 bio + 右 highlights）
-- **左栏**：120px 头像 · 名字 · bio · 招募 banner · research tags · 图标行
-- **右栏**：3 个 highlight cards，带 border
-  - Latest Paper · RAGEN-2
-  - Latest News · David Ondrej Podcast
-  - Latest Award · Outstanding Paper @ NeurIPS 2025 LAW
+### 最终方案（经两轮迭代）
+
+- **布局**：About section 改为两栏（左 bio + 右 Updates 卡片）
+- **左栏**：120px 头像 · 名字 · bio · 招募 banner · research tags（可交互） · 图标行
+- **右栏**：统一 "Updates" 容器，内含 3 条 news cards
+  - RAGEN-2 preprint 发布
+  - David Ondrej Podcast
+  - Outstanding Paper @ NeurIPS 2025 LAW
 - **Research Interest section 删除**，内容压缩为左栏 bio 下方的 tag pills
 - **头像尺寸**：200px → 120px
 
+> **迭代记录**：最初设计为 3 个独立 "Latest Paper / Latest News / Latest Award" 卡片。后改为统一 "Updates" 容器 + 3 条 news cards，更整合更简洁。
+
 ---
 
-## 4. Research Tags 交互（追加需求）
+## 4. Research Tags 交互
 
 用户要求 tags 可以点击，显示相关论文。实现：
 
@@ -63,60 +67,85 @@
 
 **论文分配：**
 
-| Tag | 论文 |
-|-----|------|
-| Agentic RL | RAGEN-2, VAGEN, UFO, RAGEN, MINT |
-| MoE | Chain-of-Experts, ESFT, DeepSeek-V2 |
-| Long-Context | T*, MindCube |
-| Multimodal | MindCube, VAGEN, T* |
+| Tag          | 论文                                  |
+| ------------ | ------------------------------------- |
+| Agentic RL   | RAGEN-2, VAGEN, UFO, RAGEN, MINT     |
+| MoE          | Chain-of-Experts, ESFT, DeepSeek-V2   |
+| Long-Context | T*, MindCube                          |
+| Multimodal   | MindCube, VAGEN, T*                   |
 
 ---
 
-## 5. 实现总结
+## 5. GitHub Stars 徽章
+
+每篇论文的 `.pub-links` 行末尾展示 GitHub star 数。
+
+### 迭代记录
+
+1. **v1 — shields.io 图片**：使用 `img.shields.io/github/stars/...?style=social`。视觉上和其他 pill 按钮完全割裂，被否决。
+2. **v2 — 纯星号 pill**：用 `☆ 2.6k` 的 pill 按钮。看不出是 GitHub stars，缺少标识。
+3. **v3 — GitHub logo + 金星 + 数字（最终方案）**：`[  ★ 2.6k ]` 样式，GitHub 图标标识来源，金色小星号，数字通过 GitHub API 实时拉取。和 Code/Paper 等 pill 风格一致。
+
+**技术细节**：
+
+- 页面加载时 JS 向 `api.github.com/repos/{owner}/{repo}` 发请求
+- 数字 ≥1000 自动显示为 `2.6k` 格式
+- API 失败时静默降级，不影响页面
+
+---
+
+## 6. 实现总结
 
 ### 修改的文件
 
 **`stylesheet.css`**（完全重写）
+
 - Inter 字体替换 Lato
 - CSS 变量双主题：`:root` + `html[data-theme="dark"]`
 - Hero 两栏 grid 布局，响应式（860px 折叠）
 - Research tag pills + popover 样式
-- Highlight cards、结构化 talks list、navbar backdrop-filter
+- Updates 容器 + news cards 样式
+- GitHub stars pill 样式（`.pub-star`）
+- 结构化 talks list、navbar backdrop-filter
 - 深色模式：`--bg: #0f0f0f`, `--text: #ececec`, `--purple: #8b7df0`
 
 **`index.html`**（结构性重构）
+
 - `<head>` 加 theme init script（避免首屏闪烁）
 - Navbar：加 dark toggle + Blog 链接，移除 Service
-- Hero 两栏：bio-left（头像行 + bio + 招募 + tags + icons） + hero-right（3 个 highlight cards）
+- Hero 两栏：bio-left（头像行 + bio + 招募 + tags + icons）+ hero-right（Updates 容器 + 3 条 news cards）
 - Bio 加 LinkedIn 图标
-- Research Interest section 删除
+- Research Interest section 删除，改为交互式 tag pills + popover
+- 每篇论文加 GitHub stars pill（`.pub-star` + API 拉取）
 - Talks 改为 `.talk-list` 结构化格式
-- 底部 JS 新增：theme toggle + research tag popover 逻辑
+- 底部 JS 新增：theme toggle、research tag popover、GitHub stars 拉取
 
 **`blog.html`**（新建）
+
 - 共享 navbar + stylesheet
 - 占位文章："RAGEN Roadmap — Where Agentic RL is Headed"
 
 **`tests/site.spec.js`**（3 → 8 个测试）
 
 新增测试：
+
 1. Dark mode toggle 切换 + localStorage 持久化
-2. Hero 3 个 highlight cards 在第一屏可见（viewport 1280×800）
+2. Hero Updates 容器 + 3 条 cards 在第一屏可见（viewport 1280×800）
 3. Bio 图标包含 LinkedIn 链接
 4. Research tag 点击 → popover 显示 → 再次点击关闭
 5. Blog 页面加载 + 共享 navbar
 
 ---
 
-## 6. 测试结果
+## 7. 测试结果
 
-```
-8 passed (4.2s)
+```text
+8 passed (4.5s)
   ✓ hamburger opens and closes the nav
   ✓ news shows 8 items by default, show more reveals rest
   ✓ publication filter shows only matching cards
   ✓ dark mode toggle switches theme and persists
-  ✓ hero has 3 highlight cards visible without scrolling
+  ✓ hero news block has header and 3 cards above the fold
   ✓ bio icons include LinkedIn link
   ✓ research tag click opens popover with papers
   ✓ blog page loads and has shared navbar
@@ -127,7 +156,7 @@
 
 ---
 
-## 7. 待办 / Out of Scope
+## 8. 待办 / Out of Scope
 
 这些事情在 docx 里提到但本次不实现，留给用户自己：
 
@@ -142,7 +171,7 @@
 
 ---
 
-## 8. 设计一致性提示
+## 9. 设计一致性提示
 
 如果后续要扩展，以下设计语言需保持一致：
 
@@ -151,7 +180,8 @@
 - **字号层级**：h2 14px uppercase · body 13.5–15px · meta 11.5–12.5px
 - **交互 hover**：文字变紫 + 背景 `--purple-glow`，border 变紫
 - **标签/按钮**：都是 pill 形（`border-radius: 999px`），无实心填充（active 状态除外）
+- **GitHub stars**：使用 `.pub-star` pill 而非 shields.io 图片，保持视觉一致性
 
 ---
 
-*Last updated: 2026-04-10*
+*Last updated: 2026-04-12*
