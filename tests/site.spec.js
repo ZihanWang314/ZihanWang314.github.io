@@ -21,30 +21,23 @@ test('hamburger opens and closes the nav', async ({ page }) => {
   await expect(nav).not.toHaveClass(/open/);
 });
 
-// ── 2. News Show More ────────────────────────────────────────────────────────
+// ── 2. News scrollable container ─────────────────────────────────────────────
 
-test('news shows 8 items by default, show more reveals rest', async ({ page }) => {
+test('news section is a scrollable container with all items visible', async ({ page }) => {
   await page.goto('/');
 
+  const container = page.locator('.news-scroll');
+  await expect(container).toBeVisible();
+
+  // All items are in the DOM, none hidden
   const allItems = page.locator('.news-item');
-  const hiddenItems = page.locator('.news-item.hidden');
-  const toggleBtn = page.locator('#news-toggle');
-
-  // Default: only 8 visible (rest hidden)
   const total = await allItems.count();
-  const hiddenCount = await hiddenItems.count();
-  expect(total - hiddenCount).toBe(8);
+  expect(total).toBeGreaterThan(0);
+  await expect(page.locator('.news-item.hidden')).toHaveCount(0);
 
-  // Click Show More → all visible
-  await toggleBtn.click();
-  await expect(hiddenItems).toHaveCount(0);
-  await expect(toggleBtn).toHaveText('Show Less');
-
-  // Click Show Less → back to 8
-  await toggleBtn.click();
-  const hiddenAgain = await page.locator('.news-item.hidden').count();
-  expect(total - hiddenAgain).toBe(8);
-  await expect(toggleBtn).toHaveText('Show More');
+  // Container has a max-height and is scrollable
+  const overflow = await container.evaluate(el => getComputedStyle(el).overflowY);
+  expect(overflow).toBe('auto');
 });
 
 // ── 3. Publication filter ────────────────────────────────────────────────────

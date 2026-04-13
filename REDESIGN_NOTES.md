@@ -76,7 +76,21 @@
 
 ---
 
-## 5. GitHub Stars 徽章
+## 5. News 滚动容器（替代 Show More）
+
+参考 qinengwang-aiden.github.io 的做法，News section 改为固定高度滚动容器。
+
+**决策：**
+
+- 容器高度：`max-height: 300px`，约显示 5-6 条
+- 滚动条：默认隐藏，hover 时显示 2px 超细半透明紫色（`rgba(139,125,240,0.4)`）
+- 底部渐变遮罩：白→透明（dark mode 下深灰→透明），滚到底部自动消失
+- 删除 "Show More/Less" 按钮，所有 news items 去掉 `.hidden` class
+- 对应 Playwright 测试改写为验证 `.news-scroll` 容器的 `overflow-y: auto`
+
+---
+
+## 6. GitHub Stars 徽章
 
 每篇论文的 `.pub-links` 行末尾展示 GitHub star 数。
 
@@ -94,7 +108,37 @@
 
 ---
 
-## 6. 实现总结
+## 7. 内容更新（网站更新.docx）
+
+基于 `~/Downloads/网站更新.docx` 的 4 个 TODO：
+
+1. **Bio 措辞**："Researcher" → "PhD researcher"，更新 NVIDIA 表述
+2. **VAGEN**：加 "Featured by Stanford AI Blog"（紫色 + 超链接）
+3. **RAGEN-2**：加 "Huggingface #2 Paper of the Day"（紫色 + 超链接）
+4. **MindCube**：加 "Adopted by Gemini 3 Pro"（Jeff Dean 推文超链接）
+5. **颜色统一**：所有 pub-venue 红色标注改为紫色（`var(--purple)`），招募信息红色除外
+
+---
+
+## 8. Dark Mode 色值迭代
+
+经过多轮调整，最终 dark mode 色板：
+
+| Token            | 色值       | 说明                                |
+| ---------------- | ---------- | ----------------------------------- |
+| `--bg`           | `#121212`  | Material Design 标准深色基底        |
+| `--bg-alt`       | `#1a1a1a`  | 卡片/次级背景                       |
+| `--text`         | `#e0e0e0`  | 主文字                              |
+| `--text-muted`   | `#b0b0b0`  | 次要文字                            |
+| `--border-strong`| `#444444`  | 分割线/按钮边框                     |
+| `--purple`       | `#8b7df0`  | 紫色 accent，在深灰底上对比度充足   |
+| `--bg-hero`      | `#1e1830→#121212` | Hero 区渐变，带紫调          |
+
+> 迭代记录：`#0f0f0f`（太黑）→ `#1c1c1e`（差别不明显）→ `#2c2c2e`（太灰）→ `#171717`（接近参考图）→ `#121212`（GPT 建议的 Material Design 标准色，最终采用）
+
+---
+
+## 9. 实现总结
 
 ### 修改的文件
 
@@ -107,7 +151,8 @@
 - Updates 容器 + news cards 样式
 - GitHub stars pill 样式（`.pub-star`）
 - 结构化 talks list、navbar backdrop-filter
-- 深色模式：`--bg: #0f0f0f`, `--text: #ececec`, `--purple: #8b7df0`
+- 深色模式：`--bg: #121212`, `--text: #e0e0e0`, `--purple: #8b7df0`（Material Design 标准）
+- News 滚动容器 + 隐藏式滚动条 + 底部渐变遮罩
 
 **`index.html`**（结构性重构）
 
@@ -118,7 +163,9 @@
 - Research Interest section 删除，改为交互式 tag pills + popover
 - 每篇论文加 GitHub stars pill（`.pub-star` + API 拉取）
 - Talks 改为 `.talk-list` 结构化格式
-- 底部 JS 新增：theme toggle、research tag popover、GitHub stars 拉取
+- 底部 JS 新增：theme toggle、research tag popover、GitHub stars 拉取（12h 缓存）、news scroll fade
+- pub-venue 红色全部改为紫色，Bio 改为 "PhD researcher"
+- 论文加 Stanford AI Blog / Huggingface / Gemini 3 Pro 标注
 
 **`blog.html`**（新建）
 
@@ -137,12 +184,12 @@
 
 ---
 
-## 7. 测试结果
+## 10. 测试结果
 
 ```text
-8 passed (4.5s)
+8 passed (4.1s)
   ✓ hamburger opens and closes the nav
-  ✓ news shows 8 items by default, show more reveals rest
+  ✓ news section is a scrollable container with all items visible
   ✓ publication filter shows only matching cards
   ✓ dark mode toggle switches theme and persists
   ✓ hero news block has header and 3 cards above the fold
@@ -156,7 +203,7 @@
 
 ---
 
-## 8. 待办 / Out of Scope
+## 11. 待办 / Out of Scope
 
 这些事情在 docx 里提到但本次不实现，留给用户自己：
 
@@ -171,7 +218,7 @@
 
 ---
 
-## 9. 设计一致性提示
+## 12. 设计一致性提示
 
 如果后续要扩展，以下设计语言需保持一致：
 
