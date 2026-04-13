@@ -649,19 +649,44 @@
     }
   });
 
-  // ── GitHub stars ──
-  document.querySelectorAll('.pub-star').forEach(el => {
-    var repo = el.dataset.repo;
-    if (!repo) return;
-    fetch('https://api.github.com/repos/' + repo, { headers: { Accept: 'application/vnd.github.v3+json' } })
-      .then(r => r.ok ? r.json() : null)
-      .then(d => {
-        if (!d || d.stargazers_count == null) return;
-        var n = d.stargazers_count;
-        el.querySelector('.star-count').textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : n;
-      })
-      .catch(() => {});
-  });
+  // ── GitHub stars (cached 1h in localStorage) ──
+  (function() {
+    var CACHE_KEY = 'gh_stars';
+    var CACHE_TTL = 43200000;
+    var cache = {};
+    try { cache = JSON.parse(localStorage.getItem(CACHE_KEY)) || {}; } catch(e) {}
+    var now = Date.now();
+    if (cache._ts && now - cache._ts > CACHE_TTL) cache = {};
+
+    var els = document.querySelectorAll('.pub-star');
+    var needFetch = [];
+
+    els.forEach(function(el) {
+      var repo = el.dataset.repo;
+      if (!repo) return;
+      if (cache[repo] != null) {
+        var n = cache[repo];
+        el.querySelector('.star-count').textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(n);
+      } else {
+        needFetch.push({ el: el, repo: repo });
+      }
+    });
+
+    if (needFetch.length === 0) return;
+    needFetch.forEach(function(item) {
+      fetch('https://api.github.com/repos/' + item.repo, { headers: { Accept: 'application/vnd.github.v3+json' } })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+          if (!d || d.stargazers_count == null) return;
+          var n = d.stargazers_count;
+          cache[item.repo] = n;
+          cache._ts = Date.now();
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); } catch(e) {}
+          item.el.querySelector('.star-count').textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(n);
+        })
+        .catch(function() {});
+    });
+  })();
 
   // ── Theme toggle ──
   const themeToggle = document.getElementById('theme-toggle');

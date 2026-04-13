@@ -21,17 +21,17 @@
 html[data-theme="dark"] {
   --purple: #8b7df0;
   --purple-light: #2a2347;
-  --purple-glow: rgba(139, 125, 240, 0.12);
-  --text: #ececec;
-  --text-muted: #a8a8a8;
-  --text-faint: #6e6e6e;
-  --border: #262626;
-  --border-strong: #3a3a3a;
-  --bg: #0f0f0f;
-  --bg-alt: #161616;
-  --bg-hero: linear-gradient(180deg, #1a1530 0%, #0f0f0f 55%);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
-  --shadow-md: 0 2px 8px rgba(0,0,0,.4);
+  --purple-glow: rgba(139, 125, 240, 0.10);
+  --text: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --text-faint: #777777;
+  --border: #2e2e2e;
+  --border-strong: #444444;
+  --bg: #121212;
+  --bg-alt: #1a1a1a;
+  --bg-hero: linear-gradient(180deg, #1e1830 0%, #121212 55%);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 2px 8px rgba(0,0,0,.5);
 }
 
 html { scroll-behavior: smooth; }
@@ -62,7 +62,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 html[data-theme="dark"] #navbar {
-  background: rgba(15,15,15,0.85);
+  background: rgba(18,18,18,0.85);
 }
 
 .nav-container {
