@@ -706,10 +706,13 @@ footer a { color: var(--text-muted); }
   margin-top: 12px;
   padding: 16px;
   width: min(420px, 92vw);
+  max-width: min(420px, 92vw);
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--bg-alt);
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 html[data-theme="dark"] .visitor-panel {
   background: rgba(255, 255, 255, 0.03);
@@ -726,10 +729,17 @@ html[data-theme="dark"] .visitor-panel {
   opacity: 0.82;
   transition: opacity .2s ease;
   cursor: pointer;
+  max-width: 100%;
 }
 .visitor-widget-shell:hover { opacity: 1; }
-.visitor-widget-shell img { max-width: 100%; height: auto; display: block; }
-.visitor-widget-shell a { display: block; }
+.visitor-widget-shell img,
+.visitor-widget-shell svg,
+.visitor-widget-shell canvas {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+.visitor-widget-shell a { display: block; max-width: 100%; }
 
 .visitor-external {
   display: inline-block;
