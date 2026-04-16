@@ -542,7 +542,24 @@
 
 <!-- ── Footer ── -->
 <footer>
-  <p>&copy; 2026 Zihan Wang &nbsp;&middot;&nbsp; Last updated April 2026</p>
+  <div class="footer-row">
+    <div class="footer-meta">&copy; 2026 Zihan Wang &nbsp;&middot;&nbsp; Last updated April 2026</div>
+    <details class="visitor-details">
+      <summary class="visitor-summary">
+        <span class="visitor-label">Global readership</span>
+      </summary>
+      <div class="visitor-panel">
+        <div class="visitor-panel-head">
+          <div class="visitor-title">Readers around the world</div>
+          <div class="visitor-subtitle">Tracked since 2023 · click the map for details</div>
+        </div>
+        <div class="visitor-widget-shell">
+          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=o89zY8a0ARtuHIK-X34murs3PrRBFGrB1jTX7j2kYt8&cl=ffffff&w=a"></script>
+        </div>
+        <a class="visitor-external" id="visitor-external" href="#" target="_blank" rel="noopener" hidden>Open interactive map ↗</a>
+      </div>
+    </details>
+  </div>
 </footer>
 
 <script>
@@ -696,6 +713,26 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
+
+  // ── Surface the ClustrMaps dashboard link once the widget injects its anchor ──
+  (function wireVisitorMap() {
+    const shell = document.querySelector('.visitor-widget-shell');
+    const external = document.getElementById('visitor-external');
+    if (!shell || !external) return;
+    const promote = () => {
+      const anchor = shell.querySelector('a[href]');
+      if (!anchor) return false;
+      anchor.setAttribute('target', '_blank');
+      anchor.setAttribute('rel', 'noopener');
+      external.href = anchor.href;
+      external.hidden = false;
+      return true;
+    };
+    if (promote()) return;
+    const obs = new MutationObserver(() => { if (promote()) obs.disconnect(); });
+    obs.observe(shell, { childList: true, subtree: true });
+    setTimeout(() => obs.disconnect(), 8000);
+  })();
 </script>
 
 </body>
