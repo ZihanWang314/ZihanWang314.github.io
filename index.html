@@ -28,13 +28,19 @@
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 
-  <!-- Inter font -->
+  <!-- Inter font (non-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <!-- Font Awesome (non-blocking) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+  <!-- Academicons (non-blocking) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"></noscript>
 </head>
 
 <body>
@@ -119,6 +125,12 @@
         <div class="hero-news">
           <div class="hero-news-title">Updates</div>
 
+          <a class="hero-news-item" href="https://ragen-ai.github.io/bagen/" target="_blank" rel="noopener">
+            <div class="hero-news-date">May 2026</div>
+            <div class="hero-news-headline">BAGEN: Do LLM Agents Know What They Will Spend?</div>
+            <div class="hero-news-desc">New preprint · Budget awareness decouples from task performance and is trainable</div>
+          </a>
+
           <a class="hero-news-item" href="https://ragen-ai.github.io/v2/" target="_blank" rel="noopener">
             <div class="hero-news-date">Feb 2026</div>
             <div class="hero-news-headline">RAGEN-2: Reasoning Collapse in Agentic RL <span style="color:red;">(ICML 2026 Oral)</span></div>
@@ -147,6 +159,11 @@
     <div class="news-scroll-wrap">
       <div class="news-scroll">
         <ul>
+          <li class="news-item">
+            <b>May 30, 2026</b> — New preprint:
+            <a href="https://ragen-ai.github.io/bagen/">BAGEN: Towards Budget-Aware Agents</a>
+            — Do LLM agents know how much budget they will spend?
+          </li>
           <li class="news-item">
             <b>May 13, 2026</b> — Awarded
             <a href="https://www.tgs.northwestern.edu/funding/fellowships-and-grants/internal-fellowships-grants/presidential-fellowship">Northwestern Presidential Fellowship Finalist</a>
@@ -240,6 +257,28 @@
     </div>
 
     <div class="pub-list">
+
+      <!-- BAGEN -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/bagen.png" alt="BAGEN"></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>Towards Budget-Aware Agents: Do LLM Agents Know What They Will Spend? (BAGEN)</div>
+          <div class="pub-authors">
+            Yuxiang Lin*, <strong>Zihan "Zenus" Wang*</strong>, Mengyang Liu*, Yuxuan Shan*, Longju Bai*,
+            Junyao Zhang, Xing Jin, Boshan Chen, Jinyan Su, Xingyao Wang, Jiaxin Pei, Manling Li
+          </div>
+          <div class="pub-venue">Preprint 2026</div>
+          <div class="pub-links">
+            <a href="https://ragen-ai.github.io/bagen/">Homepage</a>
+            <a href="https://ragen-ai.github.io/bagen/bagen.pdf">Paper</a>
+            <a href="https://github.com/mll-lab-nu/BAGEN">Code</a>
+            <a href="https://x.com/wzenus/status/2060397732846612489?s=20">Post</a>
+            <a href="https://huggingface.co/datasets/MLL-Lab/BAGEN">Data</a>
+            <a class="pub-star" href="https://github.com/mll-lab-nu/BAGEN/stargazers" data-repo="mll-lab-nu/BAGEN"><i class="fa-brands fa-github"></i><i class="fa-solid fa-star star-icon"></i><span class="star-count"></span></a>
+          </div>
+          <div class="pub-desc">Can an agent predict whether a task is still finishable mid-execution and how much more cost is needed? We evaluate 5 frontier models on 4 environments, and find <b>budget awareness decouples from task performance</b>, and agents fail universally in <b>over-optimism</b> and <b>late failure recognition</b>.</div>
+        </div>
+      </div>
 
       <!-- RAGEN-2 -->
       <div class="pub-card" data-tag="agents">
@@ -651,6 +690,7 @@
   // ── Research tags popover ──
   const tagPapers = {
     'agents': [
+      { title: 'BAGEN: Do LLM Agents Know What They Will Spend?', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/bagen/' },
       { title: 'RAGEN-2: Reasoning Collapse in Agentic RL', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/v2/' },
       { title: 'VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents', venue: 'NeurIPS 2025', href: 'https://vagen-ai.github.io/' },
       { title: 'RAGEN: Training Agents by Reinforcing Reasoning', venue: 'Open Source · Best Poster @ MMLS 2025', href: 'https://ragen-ai.github.io/' },
