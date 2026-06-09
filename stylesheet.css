@@ -562,6 +562,7 @@ html[data-theme="dark"] .bio-recruit strong { color: #ff6b6b; }
   color: var(--text-muted);
 }
 .pub-venue span[style*="color:red"] { color: var(--purple) !important; font-style: normal; font-weight: 500; }
+.award-highlight { color: #dc2626 !important; font-style: normal; font-weight: 500; }
 
 .pub-links { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .pub-links a {
