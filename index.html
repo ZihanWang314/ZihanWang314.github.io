@@ -264,6 +264,26 @@
 
     <div class="pub-list">
 
+      <!-- LAGEN -->
+      <div class="pub-card" data-tag="agents">
+        <div class="pub-thumb"><img src="images/lagen_overview.jpg" alt="LAGEN"></div>
+        <div class="pub-body">
+          <div class="pub-title"><span class="tag-new">New</span>LAGEN: Are Vision-Language Agents Latency Aware?</div>
+          <div class="pub-authors">
+            Talha Chafekar*, <strong>Zihan "Zenus" Wang*</strong>, Zeju Li*, Xinyuan Li*, Qineng Wang,
+            Jiajun Wu, Yuke Zhu, Yi Dong, Zhiding Yu, Ruohan Zhang, Manling Li
+          </div>
+          <div class="pub-venue">Preprint 2026</div>
+          <div class="pub-links">
+            <a href="https://ragen-ai.github.io/lagen/">Homepage</a>
+            <a href="https://ragen-ai.github.io/lagen/assets/paper.pdf">Paper</a>
+            <a href="https://github.com/mll-lab-nu/latency-aware-agents">Code</a>
+            <a href="https://huggingface.co/datasets/MLL-Lab/LAGEN-datasets">Data</a>
+          </div>
+          <div class="pub-desc">VLA policies evaluated in real time keep a median of only <b>6.6%</b> of their zero-latency return. LAGEN profiles deployment latency, replays it in simulation, and trains latency-aware agents, improving <b>all 36 task-architecture pairs</b> across OpenVLA, &pi;0.5, and GR00T.</div>
+        </div>
+      </div>
+
       <!-- BAGEN -->
       <div class="pub-card" data-tag="agents">
         <div class="pub-thumb"><img src="images/bagen_overview.jpg" alt="BAGEN"></div>
@@ -541,6 +561,7 @@
   <section id="awards">
     <h2>Awards</h2>
     <ul>
+      <li><b>Workday AI Research PhD Fellowship</b>, Workday, 2026</li>
       <li>
         <b><a href="https://www.tgs.northwestern.edu/funding/fellowships-and-grants/internal-fellowships-grants/presidential-fellowship">Northwestern Presidential Fellowship Finalist</a></b> (Sole CS departmental nominee), Northwestern, 2026
       </li>
@@ -699,6 +720,7 @@
   // ── Research tags popover ──
   const tagPapers = {
     'agents': [
+      { title: 'LAGEN: Are Vision-Language Agents Latency Aware?', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/lagen/' },
       { title: 'BAGEN: Are LLM Agents Budget-Aware?', venue: 'Preprint 2026 · Midwest ML Symposium 2026 Spotlight', href: 'https://ragen-ai.github.io/bagen/' },
       { title: 'RAGEN-2: Reasoning Collapse in Agentic RL', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/v2/' },
       { title: 'VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents', venue: 'NeurIPS 2025', href: 'https://vagen-ai.github.io/' },
@@ -715,6 +737,7 @@
       { title: 'Spatial Mental Modeling from Limited Views (MindCube)', venue: 'Outstanding Paper @ NeurIPS 2025 LAW', href: 'https://mind-cube.github.io' },
     ],
     'multimodal': [
+      { title: 'LAGEN: Are Vision-Language Agents Latency Aware?', venue: 'Preprint 2026', href: 'https://ragen-ai.github.io/lagen/' },
       { title: 'Spatial Mental Modeling from Limited Views (MindCube)', venue: 'Outstanding Paper @ NeurIPS 2025 LAW', href: 'https://mind-cube.github.io' },
       { title: 'VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents', venue: 'NeurIPS 2025', href: 'https://vagen-ai.github.io/' },
       { title: 'Re-thinking Temporal Search for Long-Form Video Understanding (T*)', venue: 'CVPR 2025', href: 'https://longvideohaystack.github.io/' },
